@@ -17,37 +17,51 @@
     header {
       background: linear-gradient(135deg, #0b2a4a, #123c6a);
       color: #ffffff;
-      padding: 40px 20px;
+      padding: 35px 20px;
       text-align: center;
     }
 
     header h1 {
       margin: 0;
-      font-size: 36px;
+      font-size: 34px;
       letter-spacing: 1px;
     }
 
     header p {
-      margin-top: 10px;
-      font-size: 16px;
+      margin-top: 8px;
+      font-size: 15px;
       opacity: 0.9;
     }
 
     section {
       max-width: 900px;
-      margin: 40px auto;
+      margin: 30px auto;
       background: #ffffff;
-      padding: 35px;
+      padding: 30px;
       border-radius: 10px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
     }
 
     h2 {
       margin-top: 0;
       color: #0b2a4a;
-      font-size: 24px;
+      font-size: 22px;
       border-left: 4px solid #0b2a4a;
       padding-left: 12px;
+    }
+
+    .photo-section {
+      text-align: center;
+      background: transparent;
+      box-shadow: none;
+      margin-top: 25px;
+    }
+
+    .photo-section img {
+      max-width: 90%;
+      width: 340px;
+      border-radius: 18px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
     }
 
     .highlight {
@@ -56,8 +70,8 @@
     }
 
     .social {
-      margin-top: 20px;
-      padding-top: 15px;
+      margin-top: 18px;
+      padding-top: 12px;
       border-top: 1px solid #e5e5e5;
     }
 
@@ -67,13 +81,9 @@
       font-weight: 600;
     }
 
-    .social a:hover {
-      text-decoration: underline;
-    }
-
     footer {
       text-align: center;
-      padding: 20px;
+      padding: 18px;
       font-size: 14px;
       color: #666;
     }
@@ -82,11 +92,18 @@
 
 <body>
 
+  <!-- HEADER -->
   <header>
     <h1>Mankit</h1>
     <p>Official Personal & Professional Portal</p>
   </header>
 
+  <!-- PHOTO (WELCOME SE PEHLE) -->
+  <section class="photo-section">
+    <img src="intro.jpg" alt="Mankit">
+  </section>
+
+  <!-- WELCOME -->
   <section>
     <h2>Welcome</h2>
     <p>
@@ -96,6 +113,7 @@
     </p>
   </section>
 
+  <!-- ABOUT ME -->
   <section>
     <h2>About Me</h2>
 
@@ -108,9 +126,10 @@
     </p>
 
     <p>
-      I am an <span class="highlight">alumnus and member of the Prerana Program</span>,
-      supported by the <span class="highlight">Ministry of Education,
-      Government of India</span>. I am also a proud member of the
+      I am an alumnus and member of the
+      <span class="highlight">Prerana Program</span>, supported by the
+      <span class="highlight">Ministry of Education, Government of India</span>.
+      I am also a proud member of the
       <span class="highlight">Sakura Science Club, Japan</span>, which has
       strengthened my global outlook on science, education, and leadership.
     </p>
@@ -124,14 +143,16 @@
 
     <div class="social">
       <p>
-        <strong>Instagram:</strong>
-        <a href="https://www.instagram.com/YOUR_INSTAGRAM_ID" target="_blank">
-          @MANKITVIBES.ONLY_
+        Instagram:
+        <a href="https://www.instagram.com/mankitvibes.only_"
+           target="_blank">
+          @mankitvibes.only_
         </a>
       </p>
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer>
     © 2026 Mankit. All rights reserved.
   </footer>
