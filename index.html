@@ -8,344 +8,190 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Pacifico&display=swap" rel="stylesheet">
 
 <style>
-:root{
-  --blue:#0b2a4a;
-}
-
 body{
   margin:0;
   font-family:'Poppins',sans-serif;
-  background:linear-gradient(180deg,#eef3f9,#ffffff);
+  background:#f4f8ff;
   color:#1f1f1f;
-  line-height:1.75;
 }
 
-/* SIGNATURE INTRO (TRICOLOUR) */
-.signature-intro{
-  position:fixed;
-  inset:0;
-  background:linear-gradient(180deg,#ff9933,#ffffff,#138808);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  z-index:9999;
-}
-.signature-text{
-  font-family:'Pacifico',cursive;
-  font-size:64px;
-  color:#0b2a4a;
-  background:rgba(255,255,255,.7);
-  padding:12px 30px;
-  border-radius:14px;
-}
-
-/* HEADER */
-header{
-  background:linear-gradient(135deg,#0b2a4a,#123c6a);
-  color:white;
-  padding:32px 20px;
-  text-align:center;
-}
-header h1{margin:0;font-weight:600;}
-header p{margin-top:6px;font-size:14px;opacity:.9}
-
-/* BANNER */
-.banner{
-  max-width:1000px;
-  margin:28px auto;
-  border-radius:20px;
+/* Notification strip */
+.notice{
+  margin-top:12px;
+  padding:10px;
+  background:#fff3cd;
+  border-left:5px solid #ff9800;
+  cursor:pointer;
   overflow:hidden;
-  box-shadow:0 14px 35px rgba(0,0,0,.18);
+  white-space:nowrap;
 }
-.banner img{width:100%;display:block}
+.notice span{
+  display:inline-block;
+  animation:scroll 12s linear infinite;
+}
+@keyframes scroll{
+  from{transform:translateX(100%)}
+  to{transform:translateX(-100%)}
+}
 
-/* SECTIONS */
-section{
-  max-width:900px;
-  margin:34px auto;
-  padding:34px;
-  border-radius:18px;
-  box-shadow:0 10px 24px rgba(0,0,0,.08);
+/* Birthday Panel */
+.bday-panel{
+  display:none;
   background:white;
+  max-width:600px;
+  margin:30px auto;
+  padding:30px;
+  border-radius:16px;
+  box-shadow:0 10px 30px rgba(0,0,0,.15);
 }
-h2{
-  color:var(--blue);
-  border-left:5px solid var(--blue);
-  padding-left:14px;
-}
-
-/* COUNTDOWN */
-.countdown-small{
-  margin-top:16px;
-  padding:14px 18px;
-  background:#eef3fa;
-  border-left:4px solid var(--blue);
-  font-size:14px;
-}
-.countdown-small span{font-weight:600;color:var(--blue);}
-
-/* WRITING WORLD */
-.writing-world{
-  text-align:center;
-  background:linear-gradient(135deg,#f0fff9,#e8f7f0);
-  border:2px dashed #2e7d32;
-}
-.writing-world a{
-  display:inline-block;
-  margin-top:20px;
-  padding:12px 30px;
-  background:#2e7d32;
-  color:white;
-  text-decoration:none;
-  border-radius:30px;
-  font-weight:600;
-}
-
-/* GRATITUDE */
-.gratitude{
-  background:linear-gradient(135deg,#fffaf0,#fff3e0);
-}
-.gratitude button{
-  margin-top:16px;
-  padding:10px 20px;
-  background:#ef6c00;
-  color:white;
-  border:none;
-  border-radius:8px;
-}
-.gallery img{
-  width:100%;
-  border-radius:14px;
-  margin-top:14px;
-}
-
-/* PM LETTER */
-.pm-letter{
-  background:linear-gradient(135deg,#eef3ff,#f7f9ff);
-}
-.pm-letter a{
-  display:inline-block;
-  margin-top:16px;
-  padding:10px 22px;
-  background:#3f51b5;
-  color:white;
-  border-radius:8px;
-  text-decoration:none;
-}
-
-/* WISHES */
-.wishes{
-  background:linear-gradient(135deg,#fff1f1,#ffeaea);
-  text-align:center;
-}
-.wishes h2{color:#b71c1c;border-left:none;}
-.wishes a{
-  display:inline-block;
-  margin-top:20px;
-  padding:12px 30px;
-  background:#c62828;
-  color:white;
-  border-radius:30px;
-  text-decoration:none;
-}
-
-/* 🆕 BIRTHDAY GENERATOR */
-.birthday-generator{
-  background:linear-gradient(135deg,#fdf6ff,#eef4ff);
-  border-left:6px solid #6a1b9a;
-}
-.birthday-generator label{
-  display:block;
-  margin-top:14px;
-  font-weight:600;
-}
-.birthday-generator select,
-.birthday-generator input{
+.bday-panel input,
+.bday-panel select{
   width:100%;
   padding:10px;
-  margin-top:6px;
-  border-radius:6px;
-  border:1px solid #ccc;
+  margin-top:10px;
 }
-.birthday-generator button{
+.bday-panel button{
   margin-top:18px;
-  padding:12px 28px;
-  background:#6a1b9a;
+  padding:12px;
+  width:100%;
+  background:#673ab7;
   color:white;
   border:none;
   border-radius:30px;
   font-weight:600;
-  cursor:pointer;
-}
-.wish-box{
-  margin-top:20px;
-  padding:18px;
-  background:white;
-  border-radius:12px;
-  box-shadow:0 6px 18px rgba(0,0,0,.1);
-  font-style:italic;
 }
 
-/* ABOUT */
-.about{
-  background:linear-gradient(135deg,#f7fbff,#eef3fa);
+/* Letter Page */
+.letter-page{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:#fff0f6;
+  z-index:9999;
+  padding:40px;
+  overflow:auto;
 }
-
-/* FOOTER */
-footer{
+.heart{
   text-align:center;
-  padding:20px;
-  font-size:14px;
-  color:#555;
+  font-size:60px;
+  animation:pulse 1.5s infinite;
+}
+@keyframes pulse{
+  0%,100%{transform:scale(1)}
+  50%{transform:scale(1.2)}
+}
+.letter{
+  max-width:700px;
+  margin:20px auto;
+  background:white;
+  padding:30px;
+  border-radius:18px;
+  box-shadow:0 10px 30px rgba(0,0,0,.2);
+  font-size:16px;
+  line-height:1.8;
+  white-space:pre-wrap;
+}
+.close{
+  position:fixed;
+  top:20px;
+  right:20px;
+  font-size:22px;
+  cursor:pointer;
 }
 </style>
 </head>
 
 <body>
 
-<div class="signature-intro" id="intro">
-  <div class="signature-text">Mankit</div>
-</div>
-
-<header>
-  <h1>Mankit</h1>
-  <p>Official Personal & Professional Portal</p>
-</header>
-
-<div class="banner">
-  <img src="banner.jpg" alt="Banner">
-</div>
-
-<section>
+<section style="max-width:900px;margin:40px auto;background:white;padding:30px;border-radius:18px;">
   <h2>Welcome</h2>
-  <p>
-    This space represents my journey — shaped by discipline, curiosity,
-    and a constant effort to grow with integrity.
-  </p>
-  <div class="countdown-small">
-    Countdown to <strong>3 March 2026</strong> :
-    <span id="days"></span>d
-    <span id="hours"></span>h
-    <span id="minutes"></span>m
-    <span id="seconds"></span>s
+  <p>This space reflects my journey, values, and learning.</p>
+
+  <!-- Notification -->
+  <div class="notice" onclick="openPanel()">
+    <span>Get Birthday Wish from Mankit — (Ye test hai: kya Mankit ko aapka birthday yaad hai?)</span>
   </div>
 </section>
 
-<section class="writing-world">
-  <h2>Visit My Writing World</h2>
-  <p>A space where life and learning meet words.</p>
-  <a href="https://green-cartoon-b8e.notion.site/Zindagi-Ka-Real-Syllabus-2dd161bfa1c78065b5efcb27eeb530a6?pvs=74" target="_blank">
-    Enter My Writing World
-  </a>
-</section>
+<!-- Birthday Input Panel -->
+<div class="bday-panel" id="panel">
+  <h3>Get Your Birthday Wish</h3>
 
-<section class="gratitude">
-  <h2>Those Who Shaped My Foundation</h2>
-  <button onclick="toggleBlessings()">See Blessings from PM Shri GSSS Teachers</button>
-  <div class="gallery" id="blessings" style="display:none">
-    <img src="teacher1.jpg">
-    <img src="teacher2.jpg">
-    <img src="teacher3.jpg">
-  </div>
-</section>
+  <input type="text" id="name" placeholder="Enter your name">
 
-<section class="pm-letter">
-  <h2>A Letter That Strengthened My Resolve</h2>
-  <a href="pm-letter.jpg" target="_blank">View Letter</a>
-</section>
-
-<section class="wishes">
-  <h2>Send Your Lovely Wishes to Mankit</h2>
-  <a href="mailto:mankitmankit7@gmail.com">Send Your Wishes</a>
-</section>
-
-<!-- 🆕 PERSONALIZED BIRTHDAY SECTION -->
-<section class="birthday-generator">
-  <h2>Receive a Personalized Birthday Wish from Mankit</h2>
-
-  <label>Select Category</label>
   <select id="category">
-    <option value="alumni">Prerana Alumni</option>
-    <option value="mentor">Prerana Mentors</option>
-    <option value="teacher">PM Shri GSSS Teachers</option>
-    <option value="friends">Friends</option>
+    <option value="prerana">Prerana Family</option>
     <option value="atbf">ATBF</option>
+    <option value="mentor">Mentors</option>
+    <option value="pmshri">PM Shri Family</option>
+    <option value="relative">Relatives</option>
+    <option value="unknown">Unknown Person</option>
   </select>
 
-  <label>Your Name</label>
-  <input type="text" id="personName" placeholder="Enter name">
-
-  <button onclick="generateWish()">Generate Birthday Wish</button>
-
-  <div class="wish-box" id="wishBox" style="display:none;"></div>
-</section>
-
-<section class="about">
-  <h2>About Me</h2>
-  <p>
-    My name is Mankit, born and raised in Karnal. I completed my schooling from
-    PM Shri Government Senior Secondary School, Karnal.
+  <p id="warn" style="color:red;display:none;margin-top:10px;">
+    ATBF reserved hai, please sahi category choose kare.
   </p>
-  <p>
-    I am an alumnus of the Prerana Program (Ministry of Education, Government of India)
-    and a member of the Sakura Science Club, Japan.
-  </p>
-  <p>
-    I am a JEE aspirant who believes in consistency, inclusivity, and gratitude.
-  </p>
-</section>
 
-<footer>
-© 2026 Mankit. All rights reserved.
-</footer>
+  <button onclick="showWish()">See Your Birthday Wish</button>
+</div>
+
+<!-- Letter Page -->
+<div class="letter-page" id="letterPage">
+  <div class="close" onclick="closeLetter()">✕</div>
+  <div class="heart">❤️</div>
+  <div class="letter" id="letter"></div>
+</div>
 
 <script>
-/* REMOVE INTRO */
-setTimeout(()=>{document.getElementById("intro").style.display="none";},3000);
-
-/* COUNTDOWN */
-const target=new Date("March 3, 2026 00:00:00").getTime();
-setInterval(()=>{
-  const d=target-new Date().getTime();
-  if(d<=0)return;
-  days.innerText=Math.floor(d/(1000*60*60*24));
-  hours.innerText=Math.floor((d/(1000*60*60))%24);
-  minutes.innerText=Math.floor((d/(1000*60))%60);
-  seconds.innerText=Math.floor((d/1000)%60);
-},1000);
-
-/* TEACHERS */
-function toggleBlessings(){
-  const g=document.getElementById("blessings");
-  g.style.display=g.style.display==="none"?"block":"none";
+function openPanel(){
+  document.getElementById("panel").style.display="block";
+  window.scrollTo(0,document.body.scrollHeight);
 }
 
-/* BIRTHDAY LOGIC */
-function generateWish(){
+function showWish(){
+  const name=document.getElementById("name").value||"Friend";
   const cat=document.getElementById("category").value;
-  const name=document.getElementById("personName").value.trim();
-  const box=document.getElementById("wishBox");
 
-  if(cat==="atbf" && name.toLowerCase()!=="muskan"){
-    box.style.display="block";
-    box.innerHTML="This message is reserved.";
+  if(cat==="atbf"){
+    document.getElementById("warn").style.display="block";
     return;
   }
 
-  let msg="";
-  if(cat==="alumni")
-    msg="Warm birthday wishes. Your journey through Prerana reflects resilience and purpose. May the year ahead strengthen your impact.";
-  if(cat==="mentor")
-    msg="Respected birthday greetings. Your guidance continues to shape lives with wisdom and values.";
-  if(cat==="teacher")
-    msg="With deep respect, wishing you a very happy birthday. Your role in shaping generations is invaluable.";
-  if(cat==="friends")
-    msg="Happy Birthday 🎉 May life bring growth, laughter, and meaningful moments.";
-  if(cat==="atbf")
-    msg="Happy Birthday Muskan 🌸 May your days be filled with clarity, calm strength, and smiles that stay.";
+  document.getElementById("warn").style.display="none";
+  document.getElementById("letterPage").style.display="block";
 
-  box.style.display="block";
-  box.innerHTML=msg+"<br><br>— Mankit";
+  let text="";
+  if(cat==="prerana")
+    text=`Happy Birthday ${name} 🌱\n\nBeing part of the Prerana family means believing in discipline, growth, and responsibility. On your birthday, I wish you clarity of thought, strength of character, and courage to walk your own path. May you keep learning from life, stay grounded, and always remember that consistency builds real success.\n\n— Mankit`;
+
+  if(cat==="mentor")
+    text=`Warm birthday wishes ${name} 🌼\n\nYour guidance and values leave a lasting impact. On this special day, I wish you good health, peace of mind, and continued strength to inspire many more lives. Your role matters more than words can express.\n\n— Mankit`;
+
+  if(cat==="pmshri")
+    text=`Respected birthday greetings ${name} 🎓\n\nPM Shri family represents values, education, and nation-building. I wish you a year filled with purpose, dignity, and positive contribution to society.\n\n— Mankit`;
+
+  if(cat==="relative")
+    text=`Happy Birthday ${name} 🎂\n\nFamily and relations give meaning to life. I wish you happiness, good health, and peace. May your days ahead be filled with warmth and balance.\n\n— Mankit`;
+
+  if(cat==="unknown")
+    text=`Happy Birthday 🌟\n\nThough we may not know each other personally, every individual deserves warmth on their special day. I wish you growth, calm strength, and meaningful experiences ahead.\n\n— Mankit`;
+
+  typeText(text);
+}
+
+function typeText(text){
+  const box=document.getElementById("letter");
+  box.innerHTML="";
+  let i=0;
+  const interval=setInterval(()=>{
+    box.innerHTML+=text.charAt(i);
+    i++;
+    if(i>=text.length) clearInterval(interval);
+  },30);
+}
+
+function closeLetter(){
+  document.getElementById("letterPage").style.display="none";
 }
 </script>
 
