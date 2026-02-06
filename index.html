@@ -5,7 +5,7 @@
   <title>Mankit | Official Portal</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Google Font -->
+  <!-- Stylish Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
@@ -40,9 +40,9 @@
     .banner {
       max-width: 1000px;
       margin: 25px auto;
-      border-radius: 16px;
+      border-radius: 18px;
       overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
     }
 
     .banner img {
@@ -55,7 +55,7 @@
       margin: 30px auto;
       background: white;
       padding: 30px;
-      border-radius: 12px;
+      border-radius: 14px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.06);
     }
 
@@ -92,7 +92,7 @@
       color: #666;
     }
 
-    /* FLOWERS / CONFETTI */
+    /* 🌹🌺 FLOWERS */
     .confetti {
       position: fixed;
       inset: 0;
@@ -102,13 +102,24 @@
 
     .flower {
       position: absolute;
-      font-size: 22px;
-      animation: fall 2s linear forwards;
+      font-size: 30px;
+      animation: floatDown 5s ease-in-out forwards;
+      filter: drop-shadow(0 10px 12px rgba(0,0,0,0.3));
     }
 
-    @keyframes fall {
-      from { transform: translateY(-50px); opacity: 1; }
-      to { transform: translateY(100vh); opacity: 0; }
+    @keyframes floatDown {
+      0% {
+        transform: translateY(-60px) scale(1) rotateX(0deg) rotateY(0deg);
+        opacity: 1;
+      }
+      50% {
+        transform: translateY(50vh) scale(1.15) rotateX(25deg) rotateY(25deg);
+        opacity: 0.95;
+      }
+      100% {
+        transform: translateY(100vh) scale(1.25) rotateX(40deg) rotateY(40deg);
+        opacity: 0;
+      }
     }
 
     /* POPUP */
@@ -127,7 +138,7 @@
       max-width: 420px;
       width: 90%;
       padding: 25px;
-      border-radius: 12px;
+      border-radius: 14px;
       text-align: center;
       position: relative;
       animation: fadeIn 0.4s ease;
@@ -143,7 +154,7 @@
       top: 10px;
       right: 14px;
       cursor: pointer;
-      font-size: 20px;
+      font-size: 22px;
       color: #666;
     }
 
@@ -156,10 +167,10 @@
 
 <body>
 
-<!-- FLOWERS -->
+<!-- 🌹 FLOWERS -->
 <div class="confetti" id="confetti"></div>
 
-<!-- POPUP -->
+<!-- ATTENTION POPUP -->
 <div class="popup-overlay" id="popup" style="display:none;">
   <div class="popup-box">
     <span class="close-btn" onclick="closePopup()">×</span>
@@ -226,31 +237,31 @@
 </footer>
 
 <script>
-  // FLOWERS FOR 2 SECONDS
+  /* FLOWERS 5 SEC */
   const confetti = document.getElementById("confetti");
-  const flowers = ["🌸","🌼","🌺","🌻"];
+  const flowers = ["🌹", "🪷"];
 
-  for (let i = 0; i < 25; i++) {
+  for (let i = 0; i < 18; i++) {
     const span = document.createElement("span");
     span.className = "flower";
-    span.innerText = flowers[Math.floor(Math.random()*flowers.length)];
-    span.style.left = Math.random()*100 + "vw";
-    span.style.animationDelay = Math.random()*0.5 + "s";
+    span.innerText = flowers[Math.floor(Math.random() * flowers.length)];
+    span.style.left = Math.random() * 100 + "vw";
+    span.style.animationDelay = Math.random() * 0.8 + "s";
     confetti.appendChild(span);
   }
 
-  setTimeout(() => confetti.remove(), 2000);
+  setTimeout(() => confetti.remove(), 5000);
 
-  // POPUP AFTER FLOWERS
+  /* POPUP AFTER FLOWERS */
   setTimeout(() => {
     document.getElementById("popup").style.display = "flex";
-  }, 2000);
+  }, 5000);
 
-  // AUTO CLOSE POPUP AFTER 10 SEC
+  /* AUTO CLOSE POPUP AFTER 10 SEC */
   function closePopup() {
     document.getElementById("popup").style.display = "none";
   }
-  setTimeout(closePopup, 12000);
+  setTimeout(closePopup, 15000);
 </script>
 
 </body>
