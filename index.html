@@ -1,156 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Mankit | Official Portal</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Mankit | Official Portal</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Pacifico&display=swap" rel="stylesheet">
 
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: #f4f6f9;
-      color: #1f1f1f;
-      line-height: 1.75;
-    }
+<style>
+body{
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  background:#f4f6f9;
+  color:#1f1f1f;
+  line-height:1.75;
+}
 
-    /* Signature Intro */
-    .signature-intro {
-      position: fixed;
-      inset: 0;
-      background: #0b2a4a;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
-    }
+/* Signature Intro */
+.signature-intro{
+  position:fixed;
+  inset:0;
+  background:#0b2a4a;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+}
+.signature-text{
+  font-family:'Pacifico',cursive;
+  font-size:64px;
+  color:#fff;
+  white-space:nowrap;
+  overflow:hidden;
+  width:0;
+  border-right:2px solid rgba(255,255,255,.7);
+  animation:write 3s ease forwards;
+}
+@keyframes write{to{width:260px;}}
 
-    .signature-text {
-      font-family: 'Pacifico', cursive;
-      font-size: 64px;
-      color: white;
-      white-space: nowrap;
-      overflow: hidden;
-      width: 0;
-      border-right: 2px solid rgba(255,255,255,0.7);
-      animation: write 3s ease forwards;
-    }
+/* Header */
+header{
+  background:linear-gradient(135deg,#0b2a4a,#123c6a);
+  color:white;
+  padding:30px 20px;
+  text-align:center;
+}
+header h1{margin:0;font-weight:600;}
+header p{margin-top:6px;font-size:14px;opacity:.9}
 
-    @keyframes write {
-      to { width: 260px; }
-    }
+/* Banner */
+.banner{
+  max-width:1000px;
+  margin:25px auto;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 12px 30px rgba(0,0,0,.15);
+}
+.banner img{width:100%;display:block}
 
-    header {
-      background: linear-gradient(135deg,#0b2a4a,#123c6a);
-      color: white;
-      padding: 30px 20px;
-      text-align: center;
-    }
+/* Sections */
+section{
+  max-width:900px;
+  margin:30px auto;
+  background:#fff;
+  padding:32px;
+  border-radius:14px;
+  box-shadow:0 8px 20px rgba(0,0,0,.06);
+}
+h2{
+  color:#0b2a4a;
+  border-left:4px solid #0b2a4a;
+  padding-left:12px;
+}
 
-    header h1 {
-      margin: 0;
-      font-weight: 600;
-    }
+/* Gratitude Wall */
+.gratitude{
+  background:#f9fbfd;
+  border-left:6px solid #0b2a4a;
+}
+.gratitude button{
+  margin-top:14px;
+  padding:10px 18px;
+  background:#0b2a4a;
+  color:white;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+}
+.gallery img{
+  width:100%;
+  border-radius:12px;
+  margin-top:14px;
+}
 
-    header p {
-      margin-top: 6px;
-      font-size: 14px;
-      opacity: 0.9;
-    }
+/* PM Letter */
+.pm-letter{
+  background:linear-gradient(135deg,#fdfefe,#f3f6fa);
+  border-left:6px solid #2c5aa0;
+}
+.pm-letter a{
+  display:inline-block;
+  margin-top:14px;
+  padding:10px 20px;
+  background:#2c5aa0;
+  color:white;
+  text-decoration:none;
+  border-radius:8px;
+  font-weight:600;
+}
 
-    .banner {
-      max-width: 1000px;
-      margin: 25px auto;
-      border-radius: 18px;
-      overflow: hidden;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
-    }
+/* Popup */
+.popup{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.6);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:9998;
+}
+.popup-box{
+  background:white;
+  max-width:420px;
+  width:90%;
+  padding:25px;
+  border-radius:14px;
+  text-align:center;
+  position:relative;
+}
+.close{
+  position:absolute;
+  top:10px;
+  right:14px;
+  cursor:pointer;
+  font-size:20px;
+}
 
-    .banner img {
-      width: 100%;
-      display: block;
-    }
+/* Contact */
+.contact a{
+  display:block;
+  margin-top:8px;
+  font-weight:600;
+  color:#0b2a4a;
+  text-decoration:none;
+}
 
-    section {
-      max-width: 900px;
-      margin: 30px auto;
-      background: white;
-      padding: 32px;
-      border-radius: 14px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
-    }
-
-    h2 {
-      color: #0b2a4a;
-      border-left: 4px solid #0b2a4a;
-      padding-left: 12px;
-    }
-
-    button {
-      margin-top: 14px;
-      padding: 10px 18px;
-      background: #0b2a4a;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      font-size: 14px;
-      cursor: pointer;
-    }
-
-    .gallery img {
-      width: 100%;
-      border-radius: 12px;
-      margin-top: 14px;
-    }
-
-    .contact a {
-      display: block;
-      margin-top: 8px;
-      font-weight: 600;
-      color: #0b2a4a;
-      text-decoration: none;
-    }
-
-    footer {
-      text-align: center;
-      padding: 18px;
-      font-size: 14px;
-      color: #666;
-    }
-
-    /* Popup */
-    .popup {
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.6);
-      display: none;
-      justify-content: center;
-      align-items: center;
-      z-index: 9998;
-    }
-
-    .popup-box {
-      background: white;
-      padding: 25px;
-      max-width: 420px;
-      width: 90%;
-      border-radius: 14px;
-      position: relative;
-      text-align: center;
-    }
-
-    .close {
-      position: absolute;
-      top: 10px;
-      right: 14px;
-      cursor: pointer;
-      font-size: 20px;
-      color: #555;
-    }
-  </style>
+/* Footer */
+footer{
+  text-align:center;
+  padding:18px;
+  font-size:14px;
+  color:#666;
+}
+</style>
 </head>
 
 <body>
@@ -165,9 +167,9 @@
   <div class="popup-box">
     <span class="close" onclick="closePopup()">×</span>
     <h3>Attention</h3>
-    <p>For ideas, collaboration, or communication, please contact:</p>
+    <p>For ideas, collaboration, or communication:</p>
     <p><strong>Email:</strong> mankitmankit7@gmail.com</p>
-    <p style="font-size:14px;font-style:italic;">
+    <p style="font-size:14px;font-style:italic">
       The Mankit Team will ensure your message reaches Mankit.
     </p>
   </div>
@@ -190,28 +192,39 @@
   </p>
 </section>
 
-<section>
-  <h2>Blessings from PM Shri GSSS Teachers</h2>
-  <p style="font-style:italic;">
-    With gratitude and respect for the teachers who shaped my foundation.
+<section class="gratitude">
+  <h2>Those Who Shaped My Foundation</h2>
+  <p style="font-style:italic">
+    With deep respect and gratitude towards my teachers of PM Shri GSSS Karnal.
   </p>
 
   <button onclick="toggleBlessings()">See Blessings from PM Shri GSSS Teachers</button>
 
-  <div class="gallery" id="blessings" style="display:none;">
+  <div class="gallery" id="blessings" style="display:none">
     <img src="teacher1.jpg">
     <img src="teacher2.jpg">
     <img src="teacher3.jpg">
   </div>
 </section>
 
+<section class="pm-letter">
+  <h2>A Letter That Strengthened My Resolve</h2>
+  <p>
+    I am grateful for the encouragement received from the Hon’ble Prime Minister
+    of India. This letter stands as a reminder of responsibility, service,
+    and continued dedication towards meaningful contribution.
+  </p>
+
+  <a href="pm-letter.jpg" target="_blank">View Letter</a>
+</section>
+
 <section>
   <h2>About Me</h2>
 
   <p>
-    My name is Mankit, born and raised in Karnal. I completed my schooling
-    from PM Shri Government Senior Secondary School, Karnal. I am currently
-    a JEE aspirant who believes in consistency, discipline, and honest effort.
+    My name is Mankit, born and raised in Karnal. I completed my schooling from
+    PM Shri Government Senior Secondary School, Karnal. I am currently a JEE
+    aspirant who believes in consistency, discipline, and honest effort.
   </p>
 
   <p>
@@ -220,19 +233,19 @@
   </p>
 
   <p>
-    I identify as a feminist and hold deep respect for all religions and belief systems.
-    I believe equality, dignity, and mutual respect are essential values.
+    I identify as a feminist and hold deep respect for all religions and belief
+    systems. Equality, dignity, and mutual respect guide my values.
   </p>
 
   <p>
-    All the success I have achieved so far is credited to my parents, school teachers,
-    the Prerana family, and some very special friends — mentors, teachers, boys and girls —
-    who guided and supported me.
+    Every success achieved so far is credited to my parents, school teachers,
+    the Prerana family, and special friends who have guided and supported me
+    at different stages of my life.
   </p>
 
   <p>
-    This portal is dedicated to self-reflection and to those individuals
-    whose contribution I sincerely value in my life.
+    This portal is dedicated to self-reflection and to those individuals whose
+    contribution I sincerely value and acknowledge.
   </p>
 
   <div class="contact">
@@ -246,26 +259,24 @@
 </section>
 
 <footer>
-  © 2026 Mankit. All rights reserved.
+© 2026 Mankit. All rights reserved.
 </footer>
 
 <script>
-  // Signature remove
-  setTimeout(() => {
-    document.getElementById("intro").style.display = "none";
-    document.getElementById("popup").style.display = "flex";
-  }, 3000);
+setTimeout(()=>{
+  document.getElementById("intro").style.display="none";
+  document.getElementById("popup").style.display="flex";
+},3000);
 
-  // Auto close popup
-  function closePopup() {
-    document.getElementById("popup").style.display = "none";
-  }
-  setTimeout(closePopup, 13000);
+function closePopup(){
+  document.getElementById("popup").style.display="none";
+}
+setTimeout(closePopup,13000);
 
-  function toggleBlessings() {
-    const g = document.getElementById("blessings");
-    g.style.display = g.style.display === "none" ? "block" : "none";
-  }
+function toggleBlessings(){
+  const g=document.getElementById("blessings");
+  g.style.display=g.style.display==="none"?"block":"none";
+}
 </script>
 
 </body>
