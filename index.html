@@ -5,7 +5,7 @@
   <title>Mankit | Official Portal</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Stylish Google Font -->
+  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
@@ -36,31 +36,18 @@
       font-size: 15px;
     }
 
-    /* ===== BANNER SLIDER ===== */
-    .slider {
+    /* BANNER */
+    .banner {
       max-width: 1000px;
       margin: 25px auto;
+      border-radius: 16px;
       overflow: hidden;
-      border-radius: 14px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.15);
     }
 
-    .slides {
-      display: flex;
-      width: 200%;
-      animation: slide 8s infinite;
-    }
-
-    .slides img {
+    .banner img {
       width: 100%;
-      object-fit: cover;
-    }
-
-    @keyframes slide {
-      0% { transform: translateX(0); }
-      45% { transform: translateX(0); }
-      55% { transform: translateX(-50%); }
-      100% { transform: translateX(-50%); }
+      display: block;
     }
 
     section {
@@ -95,7 +82,7 @@
       text-decoration: none;
       font-weight: 600;
       display: block;
-      margin-top: 5px;
+      margin-top: 6px;
     }
 
     footer {
@@ -105,7 +92,26 @@
       color: #666;
     }
 
-    /* ===== POPUP ===== */
+    /* FLOWERS / CONFETTI */
+    .confetti {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 9998;
+    }
+
+    .flower {
+      position: absolute;
+      font-size: 22px;
+      animation: fall 2s linear forwards;
+    }
+
+    @keyframes fall {
+      from { transform: translateY(-50px); opacity: 1; }
+      to { transform: translateY(100vh); opacity: 0; }
+    }
+
+    /* POPUP */
     .popup-overlay {
       position: fixed;
       inset: 0;
@@ -150,18 +156,17 @@
 
 <body>
 
+<!-- FLOWERS -->
+<div class="confetti" id="confetti"></div>
+
 <!-- POPUP -->
-<div class="popup-overlay" id="popup">
+<div class="popup-overlay" id="popup" style="display:none;">
   <div class="popup-box">
     <span class="close-btn" onclick="closePopup()">×</span>
     <h3>Attention</h3>
-    <p>
-      For ideas or communication, contact <strong>Mankit</strong>
-    </p>
-    <p>
-      📧 mankitmankit7@gmail.com
-    </p>
-    <p style="font-size:14px; font-style:italic;">
+    <p>For ideas or communication, contact <strong>Mankit</strong></p>
+    <p>📧 mankitmankit7@gmail.com</p>
+    <p style="font-size:14px;font-style:italic;">
       Mankit Team will contact you and ensure your message reaches Mankit.
     </p>
   </div>
@@ -172,15 +177,11 @@
   <p>Official Personal & Professional Portal</p>
 </header>
 
-<!-- BANNER SLIDER -->
-<div class="slider">
-  <div class="slides">
-    <img src="banner.jpg" alt="Banner 1">
-    <img src="banner2.jpg" alt="Banner 2">
-  </div>
+<!-- BANNER -->
+<div class="banner">
+  <img src="banner.jpg" alt="Mankit Banner">
 </div>
 
-<!-- WELCOME -->
 <section>
   <h2>Welcome</h2>
   <p>
@@ -189,7 +190,6 @@
   </p>
 </section>
 
-<!-- ABOUT ME -->
 <section>
   <h2>About Me</h2>
   <p>
@@ -226,11 +226,31 @@
 </footer>
 
 <script>
+  // FLOWERS FOR 2 SECONDS
+  const confetti = document.getElementById("confetti");
+  const flowers = ["🌸","🌼","🌺","🌻"];
+
+  for (let i = 0; i < 25; i++) {
+    const span = document.createElement("span");
+    span.className = "flower";
+    span.innerText = flowers[Math.floor(Math.random()*flowers.length)];
+    span.style.left = Math.random()*100 + "vw";
+    span.style.animationDelay = Math.random()*0.5 + "s";
+    confetti.appendChild(span);
+  }
+
+  setTimeout(() => confetti.remove(), 2000);
+
+  // POPUP AFTER FLOWERS
+  setTimeout(() => {
+    document.getElementById("popup").style.display = "flex";
+  }, 2000);
+
+  // AUTO CLOSE POPUP AFTER 10 SEC
   function closePopup() {
     document.getElementById("popup").style.display = "none";
   }
-
-  setTimeout(closePopup, 10000);
+  setTimeout(closePopup, 12000);
 </script>
 
 </body>
