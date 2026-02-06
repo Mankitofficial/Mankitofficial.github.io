@@ -10,6 +10,11 @@
 <style>
 :root{
   --blue:#0b2a4a;
+  --sky:#123c6a;
+  --soft:#f4f8ff;
+  --green:#e8f5e9;
+  --red:#fff1f1;
+  --gold:#fff8e1;
 }
 
 body{
@@ -20,100 +25,27 @@ body{
   line-height:1.75;
 }
 
-/*<!-- ===== SHINING NIGHT SIGNATURE INTRO ===== -->
-<div id="night-intro">
-  <div id="stars-layer"></div>
-  <div id="mankit-signature"></div>
-</div>
-
-<style>
-/* Night Intro Container */
-#night-intro{
+/* Signature Intro */
+.signature-intro{
   position:fixed;
   inset:0;
-  background:radial-gradient(circle at top,#0b1d3a,#02040f 75%);
+  background:linear-gradient(135deg,#0b2a4a,#123c6a);
   display:flex;
   align-items:center;
   justify-content:center;
-  z-index:99999;
-  overflow:hidden;
-}
-
-/* Stars */
-#stars-layer{
-  position:absolute;
-  inset:0;
-  background:
-    radial-gradient(2px 2px at 20% 30%, #fff, transparent),
-    radial-gradient(1.5px 1.5px at 70% 40%, #fff, transparent),
-    radial-gradient(2px 2px at 40% 80%, #fff, transparent),
-    radial-gradient(1px 1px at 90% 60%, #fff, transparent),
-    radial-gradient(1.5px 1.5px at 10% 70%, #fff, transparent),
-    radial-gradient(2px 2px at 55% 20%, #fff, transparent);
-  animation: twinkle 2.5s infinite alternate;
-}
-
-@keyframes twinkle{
-  from{opacity:0.4}
-  to{opacity:1}
-}
-
-/* Signature Text */
-#mankit-signature{
-  font-family:'Pacifico',cursive;
-  font-size:76px;
-  color:#ffffff;
-  letter-spacing:2px;
-  text-shadow:
-    0 0 10px rgba(255,255,255,0.6),
-    0 0 25px rgba(120,180,255,0.8),
-    0 0 45px rgba(80,140,255,1);
-  z-index:2;
-  opacity:0;
-}
-</style>
-
-<script>
-/* Typing Signature */
-const signText = "Mankit";
-const signEl = document.getElementById("mankit-signature");
-let index = 0;
-
-function typeSignature(){
-  if(index < signText.length){
-    signEl.style.opacity = 1;
-    signEl.innerHTML += signText.charAt(index);
-    index++;
-    setTimeout(typeSignature, 280);
-  }
-}
-typeSignature();
-
-/* Hide intro after 3 seconds */
-setTimeout(()=>{
-  document.getElementById("night-intro").style.display = "none";
-},3000);
-</script>
   z-index:9999;
 }
-
 .signature-text{
   font-family:'Pacifico',cursive;
   font-size:64px;
-  color:#0b2a4a;
-  background:rgba(255,255,255,0.6);
-  padding:10px 30px;
-  border-radius:12px;
+  color:#fff;
   white-space:nowrap;
-  opacity:0;
-  animation:signatureFade 3s ease forwards;
+  overflow:hidden;
+  width:0;
+  border-right:2px solid rgba(255,255,255,.7);
+  animation:write 3s ease forwards;
 }
-
-@keyframes signatureFade{
-  0%{opacity:0; transform:scale(0.95);}
-  30%{opacity:1; transform:scale(1);}
-  100%{opacity:1;}
-}
+@keyframes write{to{width:260px;}}
 
 /* Header */
 header{
@@ -148,6 +80,11 @@ h2{
   color:var(--blue);
   border-left:5px solid var(--blue);
   padding-left:14px;
+}
+
+/* Welcome */
+.welcome{
+  background:linear-gradient(135deg,#fdfefe,#eef6ff);
 }
 
 /* Countdown */
@@ -217,10 +154,7 @@ h2{
   background:linear-gradient(135deg,#fff1f1,#ffeaea);
   text-align:center;
 }
-.wishes h2{
-  color:#b71c1c;
-  border-left:none;
-}
+.wishes h2{color:#b71c1c;border-left:none;}
 .wishes a{
   display:inline-block;
   margin-top:20px;
@@ -248,7 +182,6 @@ footer{
 
 <body>
 
-<!-- 🇮🇳 SIGNATURE INTRO -->
 <div class="signature-intro" id="intro">
   <div class="signature-text">Mankit</div>
 </div>
@@ -262,24 +195,12 @@ footer{
   <img src="banner.jpg" alt="Banner">
 </div>
 
-<section>
+<section class="welcome">
   <h2>Welcome</h2>
   <p>
-    This space represents my journey — shaped by discipline, curiosity,
-    and a constant effort to grow with integrity.
+    This space represents my journey — shaped by discipline, curiosity, and a
+    constant desire to grow. It is not about perfection, but about progress.
   </p>
-  <a href="appointment.html" style="
-  display:inline-block;
-  margin-top:15px;
-  padding:12px 24px;
-  background:#25D366;
-  color:white;
-  border-radius:25px;
-  text-decoration:none;
-  font-weight:600;
-">
-📅 Book an Appointment
-  </a>
 
   <div class="countdown-small">
     Countdown to <strong>3 March 2026</strong> :
@@ -293,8 +214,8 @@ footer{
 <section class="writing-world">
   <h2>Visit My Writing World</h2>
   <p>
-    A space where life, learning, mistakes, and real experiences
-    come together through words.
+    Here I write about life, learning, mistakes, and real experiences —
+    especially through <strong>Zindagi Ka Real Syllabus</strong>.
   </p>
   <a href="https://green-cartoon-b8e.notion.site/Zindagi-Ka-Real-Syllabus-2dd161bfa1c78065b5efcb27eeb530a6?pvs=74" target="_blank">
     Enter My Writing World
@@ -304,8 +225,8 @@ footer{
 <section class="gratitude">
   <h2>Those Who Shaped My Foundation</h2>
   <p>
-    Teachers from PM Shri GSSS Karnal have played a defining role
-    in shaping my thinking and discipline.
+    Teachers from PM Shri GSSS Karnal have played a defining role in shaping my
+    thinking, discipline, and values.
   </p>
   <button onclick="toggleBlessings()">See Blessings from PM Shri GSSS Teachers</button>
   <div class="gallery" id="blessings" style="display:none">
@@ -318,15 +239,18 @@ footer{
 <section class="pm-letter">
   <h2>A Letter That Strengthened My Resolve</h2>
   <p>
-    Encouragement received from the Hon’ble Prime Minister of India
-    reminded me of responsibility and service.
+    Receiving words of encouragement from the Hon’ble Prime Minister of India
+    reminded me that responsibility grows with opportunity.
   </p>
   <a href="pm-letter.jpg" target="_blank">View Letter</a>
 </section>
 
 <section class="wishes">
   <h2>Send Your Lovely Wishes to Mankit</h2>
-  <p>Your words, thoughts, and expectations are always welcome.</p>
+  <p>
+    If you wish to share encouragement, feedback, or expectations —
+    your words are always welcome.
+  </p>
   <a href="mailto:mankitmankit7@gmail.com?subject=Lovely%20Wishes%20for%20Mankit">
     Send Your Wishes
   </a>
@@ -336,24 +260,32 @@ footer{
   <h2>About Me</h2>
 
   <p>
-    My name is Mankit, born and raised in Karnal. I completed my schooling
-    from PM Shri Government Senior Secondary School, Karnal.
+    My name is Mankit, born and raised in Karnal. I completed my schooling from
+    PM Shri Government Senior Secondary School, Karnal — a place that laid the
+    foundation of my discipline and values.
   </p>
 
   <p>
-    I am an alumnus of the Prerana Program (Ministry of Education, Government of India)
-    and a member of the Sakura Science Club, Japan.
+    I am an alumnus of the Prerana Program under the Ministry of Education,
+    Government of India, and a member of the Sakura Science Club, Japan.
+    These experiences shaped my national as well as global perspective.
   </p>
 
   <p>
-    I am a JEE aspirant who believes in consistency over shortcuts.
-    I identify as a feminist, respect all religions, and believe growth
-    must remain inclusive and grounded.
+    I am a JEE aspirant who believes in consistency over shortcuts. I identify
+    as a feminist, respect all religions, and believe growth is meaningful only
+    when it remains inclusive and grounded.
   </p>
 
   <p>
-    Every step forward has been possible because of my parents,
-    teachers, the Prerana family, and mentors who supported me.
+    Whatever progress I have made so far is the result of my parents’ support,
+    guidance from teachers, the Prerana family, and some very special friends —
+    mentors in different forms, irrespective of gender.
+  </p>
+
+  <p>
+    This portal is dedicated to self-improvement and to everyone whose influence
+    I acknowledge with gratitude in my life.
   </p>
 </section>
 
@@ -362,15 +294,6 @@ footer{
 </footer>
 
 <script>
-/* REMOVE SIGNATURE AFTER 3 SECONDS */
-setTimeout(()=>{
-  const intro=document.getElementById("intro");
-  if(intro){
-    intro.style.display="none";
-  }
-},3000);
-
-/* COUNTDOWN */
 const target=new Date("March 3, 2026 00:00:00").getTime();
 setInterval(()=>{
   const now=new Date().getTime();
@@ -382,7 +305,6 @@ setInterval(()=>{
   seconds.innerText=Math.floor((d/1000)%60);
 },1000);
 
-/* TOGGLE TEACHERS */
 function toggleBlessings(){
   const g=document.getElementById("blessings");
   g.style.display=g.style.display==="none"?"block":"none";
