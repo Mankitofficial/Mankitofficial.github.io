@@ -17,35 +17,34 @@
       line-height: 1.75;
     }
 
-    /* SIGNATURE INTRO */
+    /* Signature Intro */
     .signature-intro {
       position: fixed;
       inset: 0;
       background: #0b2a4a;
       display: flex;
-      align-items: center;
       justify-content: center;
-      z-index: 10000;
+      align-items: center;
+      z-index: 9999;
     }
 
     .signature-text {
       font-family: 'Pacifico', cursive;
       font-size: 64px;
-      color: #ffffff;
-      animation: write 3s ease forwards;
-      border-right: 2px solid rgba(255,255,255,0.8);
+      color: white;
       white-space: nowrap;
       overflow: hidden;
       width: 0;
+      border-right: 2px solid rgba(255,255,255,0.7);
+      animation: write 3s ease forwards;
     }
 
     @keyframes write {
-      from { width: 0; }
       to { width: 260px; }
     }
 
     header {
-      background: linear-gradient(135deg, #0b2a4a, #123c6a);
+      background: linear-gradient(135deg,#0b2a4a,#123c6a);
       color: white;
       padding: 30px 20px;
       text-align: center;
@@ -54,13 +53,12 @@
     header h1 {
       margin: 0;
       font-weight: 600;
-      letter-spacing: 1px;
     }
 
     header p {
-      margin-top: 8px;
+      margin-top: 6px;
+      font-size: 14px;
       opacity: 0.9;
-      font-size: 15px;
     }
 
     .banner {
@@ -87,23 +85,33 @@
 
     h2 {
       color: #0b2a4a;
-      font-weight: 600;
       border-left: 4px solid #0b2a4a;
       padding-left: 12px;
     }
 
-    .contact {
-      margin-top: 18px;
-      padding-top: 14px;
-      border-top: 1px solid #e5e5e5;
+    button {
+      margin-top: 14px;
+      padding: 10px 18px;
+      background: #0b2a4a;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 12px;
+      margin-top: 14px;
     }
 
     .contact a {
+      display: block;
+      margin-top: 8px;
+      font-weight: 600;
       color: #0b2a4a;
       text-decoration: none;
-      font-weight: 600;
-      display: block;
-      margin-top: 6px;
     }
 
     footer {
@@ -113,59 +121,54 @@
       color: #666;
     }
 
-    /* POPUP */
-    .popup-overlay {
+    /* Popup */
+    .popup {
       position: fixed;
       inset: 0;
       background: rgba(0,0,0,0.6);
       display: none;
       justify-content: center;
       align-items: center;
-      z-index: 9999;
+      z-index: 9998;
     }
 
     .popup-box {
       background: white;
+      padding: 25px;
       max-width: 420px;
       width: 90%;
-      padding: 25px;
       border-radius: 14px;
-      text-align: center;
       position: relative;
+      text-align: center;
     }
 
-    .popup-box h3 {
-      margin-top: 0;
-      color: #0b2a4a;
-    }
-
-    .close-btn {
+    .close {
       position: absolute;
       top: 10px;
       right: 14px;
       cursor: pointer;
-      font-size: 22px;
-      color: #666;
+      font-size: 20px;
+      color: #555;
     }
   </style>
 </head>
 
 <body>
 
-<!-- SIGNATURE INTRO -->
-<div class="signature-intro" id="signatureIntro">
+<!-- Signature -->
+<div class="signature-intro" id="intro">
   <div class="signature-text">Mankit</div>
 </div>
 
-<!-- POPUP -->
-<div class="popup-overlay" id="popup">
+<!-- Popup -->
+<div class="popup" id="popup">
   <div class="popup-box">
-    <span class="close-btn" onclick="closePopup()">×</span>
+    <span class="close" onclick="closePopup()">×</span>
     <h3>Attention</h3>
-    <p>For ideas, collaboration, or communication, please contact <strong>Mankit</strong>.</p>
-    <p>📧 mankitmankit7@gmail.com</p>
+    <p>For ideas, collaboration, or communication, please contact:</p>
+    <p><strong>Email:</strong> mankitmankit7@gmail.com</p>
     <p style="font-size:14px;font-style:italic;">
-      The Mankit Team will connect with you and ensure your message reaches Mankit.
+      The Mankit Team will ensure your message reaches Mankit.
     </p>
   </div>
 </div>
@@ -176,49 +179,60 @@
 </header>
 
 <div class="banner">
-  <img src="banner.jpg" alt="Mankit Official Banner">
+  <img src="banner.jpg" alt="Mankit Banner">
 </div>
 
 <section>
   <h2>Welcome</h2>
   <p>
-    Welcome to my official digital space. This portal is a reflection of my journey,
-    my values, and my continuous effort to grow with discipline and purpose.
+    Welcome to my official digital space. This portal reflects my journey,
+    values, and continuous effort to grow with discipline and purpose.
   </p>
+</section>
+
+<section>
+  <h2>Blessings from PM Shri GSSS Teachers</h2>
+  <p style="font-style:italic;">
+    With gratitude and respect for the teachers who shaped my foundation.
+  </p>
+
+  <button onclick="toggleBlessings()">See Blessings from PM Shri GSSS Teachers</button>
+
+  <div class="gallery" id="blessings" style="display:none;">
+    <img src="teacher1.jpg">
+    <img src="teacher2.jpg">
+    <img src="teacher3.jpg">
+  </div>
 </section>
 
 <section>
   <h2>About Me</h2>
 
   <p>
-    My name is Mankit, born and raised in Karnal. I completed my schooling from
-    PM Shri Government Senior Secondary School, Karnal. I am currently a JEE aspirant
-    who believes in consistency, discipline, and honest effort.
+    My name is Mankit, born and raised in Karnal. I completed my schooling
+    from PM Shri Government Senior Secondary School, Karnal. I am currently
+    a JEE aspirant who believes in consistency, discipline, and honest effort.
   </p>
 
   <p>
-    I am an alumnus of the Prerana Program, an initiative supported by the Ministry
-    of Education, Government of India. I am also a member of the Sakura Science Club,
-    Japan, which has contributed to my global outlook on learning and scientific thinking.
+    I am an alumnus of the Prerana Program, supported by the Ministry of Education,
+    Government of India, and a member of the Sakura Science Club, Japan.
   </p>
 
   <p>
-    I follow discipline as a daily practice and identify as a feminist, with deep
-    respect for all religions and belief systems. I believe that mutual respect,
-    equality, and understanding are essential for a balanced society.
+    I identify as a feminist and hold deep respect for all religions and belief systems.
+    I believe equality, dignity, and mutual respect are essential values.
   </p>
 
   <p>
-    All the success I have achieved so far is credited to my parents, my school teachers,
-    the Prerana family, and some very special friends — friends who are mentors,
-    teachers, boys, and girls alike — who have guided, supported, and inspired me
-    at different stages of my life.
+    All the success I have achieved so far is credited to my parents, school teachers,
+    the Prerana family, and some very special friends — mentors, teachers, boys and girls —
+    who guided and supported me.
   </p>
 
   <p>
-    This portal is dedicated to self-reflection and to those individuals whose
-    contribution and presence I deeply value and wish to acknowledge throughout
-    my life.
+    This portal is dedicated to self-reflection and to those individuals
+    whose contribution I sincerely value in my life.
   </p>
 
   <div class="contact">
@@ -236,21 +250,22 @@
 </footer>
 
 <script>
-  // Remove signature after 3 sec
+  // Signature remove
   setTimeout(() => {
-    document.getElementById("signatureIntro").style.display = "none";
-  }, 3000);
-
-  // Show popup after signature
-  setTimeout(() => {
+    document.getElementById("intro").style.display = "none";
     document.getElementById("popup").style.display = "flex";
   }, 3000);
 
-  // Auto close popup after 10 sec
+  // Auto close popup
   function closePopup() {
     document.getElementById("popup").style.display = "none";
   }
   setTimeout(closePopup, 13000);
+
+  function toggleBlessings() {
+    const g = document.getElementById("blessings");
+    g.style.display = g.style.display === "none" ? "block" : "none";
+  }
 </script>
 
 </body>
