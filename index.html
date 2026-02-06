@@ -5,209 +5,316 @@
 <title>Mankit | Official Portal</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- GOOGLE FONT -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Pacifico&display=swap" rel="stylesheet">
 
 <style>
-/* ===== BASIC ===== */
+:root{
+  --blue:#0b2a4a;
+}
+
 body{
   margin:0;
   font-family:'Poppins',sans-serif;
-  background:#f4f7fb;
+  background:linear-gradient(180deg,#eef3f9,#ffffff);
   color:#1f1f1f;
-}
-section{
-  max-width:900px;
-  margin:35px auto;
-  background:white;
-  padding:35px;
-  border-radius:18px;
-  box-shadow:0 12px 30px rgba(0,0,0,.1);
-}
-h2{
-  border-left:5px solid #0b2a4a;
-  padding-left:12px;
-  color:#0b2a4a;
+  line-height:1.75;
 }
 
-/* ===== SIGNATURE INTRO ===== */
-#intro{
+/* 🇮🇳 TRICOLOUR SIGNATURE INTRO */
+.signature-intro{
   position:fixed;
   inset:0;
-  background:linear-gradient(180deg,#ff9933,#ffffff,#138808);
+  background:linear-gradient(
+    180deg,
+    #ff9933 0%,
+    #ffffff 50%,
+    #138808 100%
+  );
   display:flex;
   align-items:center;
   justify-content:center;
   z-index:9999;
 }
-#intro span{
+
+.signature-text{
   font-family:'Pacifico',cursive;
   font-size:64px;
-  background:rgba(255,255,255,.7);
-  padding:12px 35px;
-  border-radius:14px;
+  color:#0b2a4a;
+  background:rgba(255,255,255,0.6);
+  padding:10px 30px;
+  border-radius:12px;
+  white-space:nowrap;
+  opacity:0;
+  animation:signatureFade 3s ease forwards;
 }
 
-/* ===== HEADER ===== */
+@keyframes signatureFade{
+  0%{opacity:0; transform:scale(0.95);}
+  30%{opacity:1; transform:scale(1);}
+  100%{opacity:1;}
+}
+
+/* Header */
 header{
-  background:#0b2a4a;
+  background:linear-gradient(135deg,#0b2a4a,#123c6a);
   color:white;
+  padding:32px 20px;
   text-align:center;
-  padding:30px 20px;
+}
+header h1{margin:0;font-weight:600;}
+header p{margin-top:6px;font-size:14px;opacity:.9}
+
+/* Banner */
+.banner{
+  max-width:1000px;
+  margin:28px auto;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 14px 35px rgba(0,0,0,.18);
+}
+.banner img{width:100%;display:block}
+
+/* Sections */
+section{
+  max-width:900px;
+  margin:34px auto;
+  padding:34px;
+  border-radius:18px;
+  box-shadow:0 10px 24px rgba(0,0,0,.08);
+  background:white;
+}
+h2{
+  color:var(--blue);
+  border-left:5px solid var(--blue);
+  padding-left:14px;
 }
 
-/* ===== NOTIFICATION ===== */
-.notice{
-  margin-top:15px;
-  padding:12px;
-  background:#fff3cd;
-  color:#7a4b00;
+/* Countdown */
+.countdown-small{
+  margin-top:16px;
+  padding:14px 18px;
+  background:#eef3fa;
+  border-left:4px solid var(--blue);
+  font-size:14px;
+}
+.countdown-small span{
   font-weight:600;
-  cursor:pointer;
-  animation:blink 1.4s infinite;
-}
-@keyframes blink{
-  0%{opacity:1}
-  50%{opacity:.5}
-  100%{opacity:1}
+  color:var(--blue);
 }
 
-/* ===== BIRTHDAY BOX ===== */
-#birthdayBox{
-  display:none;
-  margin-top:25px;
-  background:#faf7ff;
-  padding:25px;
-  border-radius:14px;
+/* Writing World */
+.writing-world{
+  text-align:center;
+  background:linear-gradient(135deg,#f0fff9,#e8f7f0);
+  border:2px dashed #2e7d32;
 }
-input,select,button{
-  width:100%;
-  padding:12px;
-  margin-top:12px;
+.writing-world a{
+  display:inline-block;
+  margin-top:20px;
+  padding:12px 30px;
+  background:#2e7d32;
+  color:white;
+  text-decoration:none;
+  font-weight:600;
+  border-radius:30px;
 }
-button{
-  background:#673ab7;
+
+/* Gratitude */
+.gratitude{
+  background:linear-gradient(135deg,#fffaf0,#fff3e0);
+}
+.gratitude button{
+  margin-top:16px;
+  padding:10px 20px;
+  background:#ef6c00;
   color:white;
   border:none;
-  border-radius:25px;
-  font-size:15px;
-  cursor:pointer;
+  border-radius:8px;
 }
-#warn{
-  display:none;
-  font-weight:600;
-  margin-top:10px;
+.gallery img{
+  width:100%;
+  border-radius:14px;
+  margin-top:14px;
 }
 
-/* ===== LETTER PAGE ===== */
-#letterPage{
-  display:none;
-  position:fixed;
-  inset:0;
-  background:#fff0f6;
-  z-index:9999;
-  padding:40px 20px;
+/* PM Letter */
+.pm-letter{
+  background:linear-gradient(135deg,#eef3ff,#f7f9ff);
 }
-#heart{
+.pm-letter a{
+  display:inline-block;
+  margin-top:16px;
+  padding:10px 22px;
+  background:#3f51b5;
+  color:white;
+  border-radius:8px;
+  text-decoration:none;
+}
+
+/* Wishes */
+.wishes{
+  background:linear-gradient(135deg,#fff1f1,#ffeaea);
   text-align:center;
-  font-size:60px;
-  animation:pulse 1.5s infinite;
 }
-@keyframes pulse{
-  0%{transform:scale(1)}
-  50%{transform:scale(1.2)}
-  100%{transform:scale(1)}
+.wishes h2{
+  color:#b71c1c;
+  border-left:none;
 }
-#letter{
-  max-width:750px;
-  margin:30px auto;
-  background:white;
-  padding:35px;
-  border-radius:18px;
-  font-size:17px;
-  line-height:1.7;
-  white-space:pre-wrap;
-}
-#close{
-  position:fixed;
-  top:20px;
-  right:25px;
-  font-size:24px;
-  cursor:pointer;
+.wishes a{
+  display:inline-block;
+  margin-top:20px;
+  padding:12px 30px;
+  background:#c62828;
+  color:white;
+  border-radius:30px;
+  text-decoration:none;
 }
 
-/* ===== FOOTER ===== */
+/* About */
+.about{
+  background:linear-gradient(135deg,#f7fbff,#eef3fa);
+}
+
+/* Footer */
 footer{
   text-align:center;
   padding:20px;
-  color:#666;
+  font-size:14px;
+  color:#555;
 }
 </style>
 </head>
 
 <body>
 
-<!-- SIGNATURE -->
-<div id="intro"><span>Mankit</span></div>
+<!-- 🇮🇳 SIGNATURE INTRO -->
+<div class="signature-intro" id="intro">
+  <div class="signature-text">Mankit</div>
+</div>
 
 <header>
   <h1>Mankit</h1>
   <p>Official Personal & Professional Portal</p>
 </header>
 
+<div class="banner">
+  <img src="banner.jpg" alt="Banner">
+</div>
+
 <section>
   <h2>Welcome</h2>
   <p>
-    Welcome to my official digital space.  
-    This portal reflects my journey, values, discipline, learning,
-    and continuous effort to grow with responsibility and gratitude.
+    This space represents my journey — shaped by discipline, curiosity,
+    and a constant effort to grow with integrity.
   </p>
 
-  <div class="notice" onclick="openBirthdayBox()">
-    🎂 Get Birthday Wish from Mankit  
-    (Ye test hai: kya Mankit ko aapka birthday yaad hai?)
-  </div>
-
-  <div id="birthdayBox">
-    <h3>Get Your Birthday Wish</h3>
-    <input id="name" placeholder="Enter your name">
-    <select id="category">
-      <option value="prerana">Prerana Family</option>
-      <option value="atbf">ATBF</option>
-      <option value="mentor">Mentors</option>
-      <option value="pmshri">PM Shri Family</option>
-      <option value="relative">Relatives</option>
-      <option value="unknown">Unknown Person</option>
-    </select>
-    <p id="warn"></p>
-    <button onclick="showWish()">See Your Birthday Wish</button>
+  <div class="countdown-small">
+    Countdown to <strong>3 March 2026</strong> :
+    <span id="days"></span>d
+    <span id="hours"></span>h
+    <span id="minutes"></span>m
+    <span id="seconds"></span>s
   </div>
 </section>
 
-<section>
-  <h2>About Me</h2>
+<section class="writing-world">
+  <h2>Visit My Writing World</h2>
   <p>
-    My name is Mankit, born and raised in Karnal.
-    I completed my schooling from PM Shri Government Senior Secondary School, Karnal.
+    A space where life, learning, mistakes, and real experiences
+    come together through words.
   </p>
+  <a href="https://green-cartoon-b8e.notion.site/Zindagi-Ka-Real-Syllabus-2dd161bfa1c78065b5efcb27eeb530a6?pvs=74" target="_blank">
+    Enter My Writing World
+  </a>
+</section>
+
+<section class="gratitude">
+  <h2>Those Who Shaped My Foundation</h2>
+  <p>
+    Teachers from PM Shri GSSS Karnal have played a defining role
+    in shaping my thinking and discipline.
+  </p>
+  <button onclick="toggleBlessings()">See Blessings from PM Shri GSSS Teachers</button>
+  <div class="gallery" id="blessings" style="display:none">
+    <img src="teacher1.jpg">
+    <img src="teacher2.jpg">
+    <img src="teacher3.jpg">
+  </div>
+</section>
+
+<section class="pm-letter">
+  <h2>A Letter That Strengthened My Resolve</h2>
+  <p>
+    Encouragement received from the Hon’ble Prime Minister of India
+    reminded me of responsibility and service.
+  </p>
+  <a href="pm-letter.jpg" target="_blank">View Letter</a>
+</section>
+
+<section class="wishes">
+  <h2>Send Your Lovely Wishes to Mankit</h2>
+  <p>Your words, thoughts, and expectations are always welcome.</p>
+  <a href="mailto:mankitmankit7@gmail.com?subject=Lovely%20Wishes%20for%20Mankit">
+    Send Your Wishes
+  </a>
+</section>
+
+<section class="about">
+  <h2>About Me</h2>
+
+  <p>
+    My name is Mankit, born and raised in Karnal. I completed my schooling
+    from PM Shri Government Senior Secondary School, Karnal.
+  </p>
+
   <p>
     I am an alumnus of the Prerana Program (Ministry of Education, Government of India)
     and a member of the Sakura Science Club, Japan.
-    I am a JEE aspirant who believes in consistency, discipline, and honesty.
   </p>
+
   <p>
-    I respect all religions, identify as a feminist,
-    and believe every success I have achieved belongs to my parents,
-    teachers, Prerana family, and special friends.
+    I am a JEE aspirant who believes in consistency over shortcuts.
+    I identify as a feminist, respect all religions, and believe growth
+    must remain inclusive and grounded.
+  </p>
+
+  <p>
+    Every step forward has been possible because of my parents,
+    teachers, the Prerana family, and mentors who supported me.
   </p>
 </section>
-
-<div id="letterPage">
-  <div id="close" onclick="closeLetter()">✕</div>
-  <div id="heart">❤️</div>
-  <div id="letter"></div>
-</div>
 
 <footer>
 © 2026 Mankit. All rights reserved.
 </footer>
+
+<script>
+/* REMOVE SIGNATURE AFTER 3 SECONDS */
+setTimeout(()=>{
+  const intro=document.getElementById("intro");
+  if(intro){
+    intro.style.display="none";
+  }
+},3000);
+
+/* COUNTDOWN */
+const target=new Date("March 3, 2026 00:00:00").getTime();
+setInterval(()=>{
+  const now=new Date().getTime();
+  const d=target-now;
+  if(d<=0)return;
+  days.innerText=Math.floor(d/(1000*60*60*24));
+  hours.innerText=Math.floor((d/(1000*60*60))%24);
+  minutes.innerText=Math.floor((d/(1000*60))%60);
+  seconds.innerText=Math.floor((d/1000)%60);
+},1000);
+
+/* TOGGLE TEACHERS */
+function toggleBlessings(){
+  const g=document.getElementById("blessings");
+  g.style.display=g.style.display==="none"?"block":"none";
+}
+</script>
+
+</body>
+</html>
