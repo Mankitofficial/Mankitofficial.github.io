@@ -73,34 +73,92 @@ h2{
   padding-left:12px;
 }
 
-/* 🎂 COUNTDOWN */
-.countdown{
+/* SMALL COUNTDOWN */
+.countdown-small{
+  margin-top:14px;
+  padding:12px 16px;
+  background:#f1f4f8;
+  border-left:4px solid #0b2a4a;
+  font-size:14px;
+  color:#333;
+}
+.countdown-small span{
+  font-weight:600;
+  color:#0b2a4a;
+}
+
+/* Writing World */
+.writing-world{
   text-align:center;
   background:linear-gradient(135deg,#fdfefe,#eef3f9);
-  border-left:6px solid #0b2a4a;
+  border:2px dashed #0b2a4a;
 }
-.timer{
-  display:flex;
-  justify-content:center;
-  gap:18px;
+.writing-world a{
+  display:inline-block;
   margin-top:18px;
-  flex-wrap:wrap;
-}
-.time-box{
+  padding:12px 26px;
   background:#0b2a4a;
   color:white;
-  padding:14px 18px;
-  border-radius:12px;
-  min-width:90px;
+  text-decoration:none;
+  font-weight:600;
+  border-radius:30px;
 }
-.time-box span{
-  display:block;
-  font-size:26px;
+
+/* Gratitude Wall */
+.gratitude{
+  background:#f9fbfd;
+  border-left:6px solid #0b2a4a;
+}
+.gratitude button{
+  margin-top:14px;
+  padding:10px 18px;
+  background:#0b2a4a;
+  color:white;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+}
+.gallery img{
+  width:100%;
+  border-radius:12px;
+  margin-top:14px;
+}
+
+/* PM Letter */
+.pm-letter{
+  background:linear-gradient(135deg,#fdfefe,#f3f6fa);
+  border-left:6px solid #2c5aa0;
+}
+.pm-letter a{
+  display:inline-block;
+  margin-top:14px;
+  padding:10px 20px;
+  background:#2c5aa0;
+  color:white;
+  text-decoration:none;
+  border-radius:8px;
   font-weight:600;
 }
-.time-box small{
-  font-size:12px;
-  opacity:.85;
+
+/* Wishes */
+.wishes{
+  background:#fff5f5;
+  border-left:6px solid #c62828;
+  text-align:center;
+}
+.wishes h2{
+  color:#b71c1c;
+  border-left:none;
+}
+.wishes a{
+  display:inline-block;
+  margin-top:18px;
+  padding:12px 28px;
+  background:#c62828;
+  color:white;
+  text-decoration:none;
+  font-weight:600;
+  border-radius:30px;
 }
 
 /* Popup */
@@ -128,6 +186,15 @@ h2{
   right:14px;
   cursor:pointer;
   font-size:20px;
+}
+
+/* Contact */
+.contact a{
+  display:block;
+  margin-top:8px;
+  font-weight:600;
+  color:#0b2a4a;
+  text-decoration:none;
 }
 
 /* Footer */
@@ -166,40 +233,84 @@ footer{
   <img src="banner.jpg" alt="Mankit Banner">
 </div>
 
-<!-- 🎂 COUNTDOWN SECTION -->
-<section class="countdown">
-  <h2>Countdown to 3 March 2026</h2>
-  <p>
-    A personal milestone — marking another year of growth, learning,
-    and responsibility.
-  </p>
-
-  <div class="timer">
-    <div class="time-box">
-      <span id="days">0</span>
-      <small>Days</small>
-    </div>
-    <div class="time-box">
-      <span id="hours">0</span>
-      <small>Hours</small>
-    </div>
-    <div class="time-box">
-      <span id="minutes">0</span>
-      <small>Minutes</small>
-    </div>
-    <div class="time-box">
-      <span id="seconds">0</span>
-      <small>Seconds</small>
-    </div>
-  </div>
-</section>
-
 <section>
   <h2>Welcome</h2>
   <p>
     Welcome to my official digital space. This portal reflects my journey,
     values, and continuous effort to grow with discipline and purpose.
   </p>
+
+  <!-- SMALL COUNTDOWN -->
+  <div class="countdown-small">
+    Countdown to <strong>3 March 2026</strong> :
+    <span id="days"></span>d
+    <span id="hours"></span>h
+    <span id="minutes"></span>m
+    <span id="seconds"></span>s
+  </div>
+</section>
+
+<section class="writing-world">
+  <h2>Visit My Writing World</h2>
+  <p>A space where life, learning, and real experiences are woven into words.</p>
+  <a href="https://green-cartoon-b8e.notion.site/Zindagi-Ka-Real-Syllabus-2dd161bfa1c78065b5efcb27eeb530a6?pvs=74" target="_blank">
+    Enter My Writing World
+  </a>
+</section>
+
+<section class="gratitude">
+  <h2>Those Who Shaped My Foundation</h2>
+  <p style="font-style:italic">
+    With deep respect and gratitude towards my teachers of PM Shri GSSS Karnal.
+  </p>
+  <button onclick="toggleBlessings()">See Blessings from PM Shri GSSS Teachers</button>
+  <div class="gallery" id="blessings" style="display:none">
+    <img src="teacher1.jpg">
+    <img src="teacher2.jpg">
+    <img src="teacher3.jpg">
+  </div>
+</section>
+
+<section class="pm-letter">
+  <h2>A Letter That Strengthened My Resolve</h2>
+  <p>
+    I am grateful for the encouragement received from the Hon’ble Prime Minister
+    of India.
+  </p>
+  <a href="pm-letter.jpg" target="_blank">View Letter</a>
+</section>
+
+<section class="wishes">
+  <h2>Send Your Lovely Wishes to Mankit</h2>
+  <p>What would you like to share with me?</p>
+  <a href="mailto:mankitmankit7@gmail.com?subject=Lovely%20Wishes%20for%20Mankit">
+    Send Your Wishes
+  </a>
+</section>
+
+<section>
+  <h2>About Me</h2>
+  <p>
+    My name is Mankit, born and raised in Karnal. I completed my schooling from
+    PM Shri Government Senior Secondary School, Karnal and am currently a JEE aspirant.
+  </p>
+  <p>
+    I am an alumnus of the Prerana Program (Ministry of Education, Government of India)
+    and a member of the Sakura Science Club, Japan.
+  </p>
+  <p>
+    I believe in equality, respect all religions, and follow discipline as a way of life.
+    Every achievement is credited to my parents, teachers, the Prerana family,
+    and special friends who guided me.
+  </p>
+  <div class="contact">
+    <a href="https://www.instagram.com/mankitvibes.only_" target="_blank">
+      Instagram: @mankitvibes.only_
+    </a>
+    <a href="mailto:mankitmankit7@gmail.com">
+      Email: mankitmankit7@gmail.com
+    </a>
+  </div>
 </section>
 
 <footer>
@@ -212,31 +323,26 @@ setTimeout(()=>{
   document.getElementById("intro").style.display="none";
   document.getElementById("popup").style.display="flex";
 },3000);
-
-function closePopup(){
-  document.getElementById("popup").style.display="none";
-}
+function closePopup(){document.getElementById("popup").style.display="none";}
 setTimeout(closePopup,13000);
 
-/* 🎂 COUNTDOWN SCRIPT */
-const targetDate = new Date("March 3, 2026 00:00:00").getTime();
+/* Toggle teachers */
+function toggleBlessings(){
+  const g=document.getElementById("blessings");
+  g.style.display=g.style.display==="none"?"block":"none";
+}
 
-setInterval(() => {
-  const now = new Date().getTime();
-  const diff = targetDate - now;
-
-  if (diff <= 0) return;
-
-  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-  const minutes = Math.floor((diff / (1000 * 60)) % 60);
-  const seconds = Math.floor((diff / 1000) % 60);
-
-  document.getElementById("days").innerText = days;
-  document.getElementById("hours").innerText = hours;
-  document.getElementById("minutes").innerText = minutes;
-  document.getElementById("seconds").innerText = seconds;
-}, 1000);
+/* COUNTDOWN */
+const targetDate=new Date("March 3, 2026 00:00:00").getTime();
+setInterval(()=>{
+  const now=new Date().getTime();
+  const diff=targetDate-now;
+  if(diff<=0)return;
+  document.getElementById("days").innerText=Math.floor(diff/(1000*60*60*24));
+  document.getElementById("hours").innerText=Math.floor((diff/(1000*60*60))%24);
+  document.getElementById("minutes").innerText=Math.floor((diff/(1000*60))%60);
+  document.getElementById("seconds").innerText=Math.floor((diff/1000)%60);
+},1000);
 </script>
 
 </body>
