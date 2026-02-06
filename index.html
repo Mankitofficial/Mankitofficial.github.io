@@ -20,41 +20,26 @@ body{
   line-height:1.75;
 }
 
-/* 🇮🇳 TRICOLOUR SIGNATURE INTRO */
+/* SIGNATURE INTRO (TRICOLOUR) */
 .signature-intro{
   position:fixed;
   inset:0;
-  background:linear-gradient(
-    180deg,
-    #ff9933 0%,
-    #ffffff 50%,
-    #138808 100%
-  );
+  background:linear-gradient(180deg,#ff9933,#ffffff,#138808);
   display:flex;
   align-items:center;
   justify-content:center;
   z-index:9999;
 }
-
 .signature-text{
   font-family:'Pacifico',cursive;
   font-size:64px;
   color:#0b2a4a;
-  background:rgba(255,255,255,0.6);
-  padding:10px 30px;
-  border-radius:12px;
-  white-space:nowrap;
-  opacity:0;
-  animation:signatureFade 3s ease forwards;
+  background:rgba(255,255,255,.7);
+  padding:12px 30px;
+  border-radius:14px;
 }
 
-@keyframes signatureFade{
-  0%{opacity:0; transform:scale(0.95);}
-  30%{opacity:1; transform:scale(1);}
-  100%{opacity:1;}
-}
-
-/* Header */
+/* HEADER */
 header{
   background:linear-gradient(135deg,#0b2a4a,#123c6a);
   color:white;
@@ -64,7 +49,7 @@ header{
 header h1{margin:0;font-weight:600;}
 header p{margin-top:6px;font-size:14px;opacity:.9}
 
-/* Banner */
+/* BANNER */
 .banner{
   max-width:1000px;
   margin:28px auto;
@@ -74,7 +59,7 @@ header p{margin-top:6px;font-size:14px;opacity:.9}
 }
 .banner img{width:100%;display:block}
 
-/* Sections */
+/* SECTIONS */
 section{
   max-width:900px;
   margin:34px auto;
@@ -89,7 +74,7 @@ h2{
   padding-left:14px;
 }
 
-/* Countdown */
+/* COUNTDOWN */
 .countdown-small{
   margin-top:16px;
   padding:14px 18px;
@@ -97,12 +82,9 @@ h2{
   border-left:4px solid var(--blue);
   font-size:14px;
 }
-.countdown-small span{
-  font-weight:600;
-  color:var(--blue);
-}
+.countdown-small span{font-weight:600;color:var(--blue);}
 
-/* Writing World */
+/* WRITING WORLD */
 .writing-world{
   text-align:center;
   background:linear-gradient(135deg,#f0fff9,#e8f7f0);
@@ -115,11 +97,11 @@ h2{
   background:#2e7d32;
   color:white;
   text-decoration:none;
-  font-weight:600;
   border-radius:30px;
+  font-weight:600;
 }
 
-/* Gratitude */
+/* GRATITUDE */
 .gratitude{
   background:linear-gradient(135deg,#fffaf0,#fff3e0);
 }
@@ -137,7 +119,7 @@ h2{
   margin-top:14px;
 }
 
-/* PM Letter */
+/* PM LETTER */
 .pm-letter{
   background:linear-gradient(135deg,#eef3ff,#f7f9ff);
 }
@@ -151,15 +133,12 @@ h2{
   text-decoration:none;
 }
 
-/* Wishes */
+/* WISHES */
 .wishes{
   background:linear-gradient(135deg,#fff1f1,#ffeaea);
   text-align:center;
 }
-.wishes h2{
-  color:#b71c1c;
-  border-left:none;
-}
+.wishes h2{color:#b71c1c;border-left:none;}
 .wishes a{
   display:inline-block;
   margin-top:20px;
@@ -170,12 +149,49 @@ h2{
   text-decoration:none;
 }
 
-/* About */
+/* 🆕 BIRTHDAY GENERATOR */
+.birthday-generator{
+  background:linear-gradient(135deg,#fdf6ff,#eef4ff);
+  border-left:6px solid #6a1b9a;
+}
+.birthday-generator label{
+  display:block;
+  margin-top:14px;
+  font-weight:600;
+}
+.birthday-generator select,
+.birthday-generator input{
+  width:100%;
+  padding:10px;
+  margin-top:6px;
+  border-radius:6px;
+  border:1px solid #ccc;
+}
+.birthday-generator button{
+  margin-top:18px;
+  padding:12px 28px;
+  background:#6a1b9a;
+  color:white;
+  border:none;
+  border-radius:30px;
+  font-weight:600;
+  cursor:pointer;
+}
+.wish-box{
+  margin-top:20px;
+  padding:18px;
+  background:white;
+  border-radius:12px;
+  box-shadow:0 6px 18px rgba(0,0,0,.1);
+  font-style:italic;
+}
+
+/* ABOUT */
 .about{
   background:linear-gradient(135deg,#f7fbff,#eef3fa);
 }
 
-/* Footer */
+/* FOOTER */
 footer{
   text-align:center;
   padding:20px;
@@ -187,7 +203,6 @@ footer{
 
 <body>
 
-<!-- 🇮🇳 SIGNATURE INTRO -->
 <div class="signature-intro" id="intro">
   <div class="signature-text">Mankit</div>
 </div>
@@ -207,7 +222,6 @@ footer{
     This space represents my journey — shaped by discipline, curiosity,
     and a constant effort to grow with integrity.
   </p>
-
   <div class="countdown-small">
     Countdown to <strong>3 March 2026</strong> :
     <span id="days"></span>d
@@ -219,10 +233,7 @@ footer{
 
 <section class="writing-world">
   <h2>Visit My Writing World</h2>
-  <p>
-    A space where life, learning, mistakes, and real experiences
-    come together through words.
-  </p>
+  <p>A space where life and learning meet words.</p>
   <a href="https://green-cartoon-b8e.notion.site/Zindagi-Ka-Real-Syllabus-2dd161bfa1c78065b5efcb27eeb530a6?pvs=74" target="_blank">
     Enter My Writing World
   </a>
@@ -230,10 +241,6 @@ footer{
 
 <section class="gratitude">
   <h2>Those Who Shaped My Foundation</h2>
-  <p>
-    Teachers from PM Shri GSSS Karnal have played a defining role
-    in shaping my thinking and discipline.
-  </p>
   <button onclick="toggleBlessings()">See Blessings from PM Shri GSSS Teachers</button>
   <div class="gallery" id="blessings" style="display:none">
     <img src="teacher1.jpg">
@@ -244,43 +251,47 @@ footer{
 
 <section class="pm-letter">
   <h2>A Letter That Strengthened My Resolve</h2>
-  <p>
-    Encouragement received from the Hon’ble Prime Minister of India
-    reminded me of responsibility and service.
-  </p>
   <a href="pm-letter.jpg" target="_blank">View Letter</a>
 </section>
 
 <section class="wishes">
   <h2>Send Your Lovely Wishes to Mankit</h2>
-  <p>Your words, thoughts, and expectations are always welcome.</p>
-  <a href="mailto:mankitmankit7@gmail.com?subject=Lovely%20Wishes%20for%20Mankit">
-    Send Your Wishes
-  </a>
+  <a href="mailto:mankitmankit7@gmail.com">Send Your Wishes</a>
+</section>
+
+<!-- 🆕 PERSONALIZED BIRTHDAY SECTION -->
+<section class="birthday-generator">
+  <h2>Receive a Personalized Birthday Wish from Mankit</h2>
+
+  <label>Select Category</label>
+  <select id="category">
+    <option value="alumni">Prerana Alumni</option>
+    <option value="mentor">Prerana Mentors</option>
+    <option value="teacher">PM Shri GSSS Teachers</option>
+    <option value="friends">Friends</option>
+    <option value="atbf">ATBF</option>
+  </select>
+
+  <label>Your Name</label>
+  <input type="text" id="personName" placeholder="Enter name">
+
+  <button onclick="generateWish()">Generate Birthday Wish</button>
+
+  <div class="wish-box" id="wishBox" style="display:none;"></div>
 </section>
 
 <section class="about">
   <h2>About Me</h2>
-
   <p>
-    My name is Mankit, born and raised in Karnal. I completed my schooling
-    from PM Shri Government Senior Secondary School, Karnal.
+    My name is Mankit, born and raised in Karnal. I completed my schooling from
+    PM Shri Government Senior Secondary School, Karnal.
   </p>
-
   <p>
     I am an alumnus of the Prerana Program (Ministry of Education, Government of India)
     and a member of the Sakura Science Club, Japan.
   </p>
-
   <p>
-    I am a JEE aspirant who believes in consistency over shortcuts.
-    I identify as a feminist, respect all religions, and believe growth
-    must remain inclusive and grounded.
-  </p>
-
-  <p>
-    Every step forward has been possible because of my parents,
-    teachers, the Prerana family, and mentors who supported me.
+    I am a JEE aspirant who believes in consistency, inclusivity, and gratitude.
   </p>
 </section>
 
@@ -289,19 +300,13 @@ footer{
 </footer>
 
 <script>
-/* REMOVE SIGNATURE AFTER 3 SECONDS */
-setTimeout(()=>{
-  const intro=document.getElementById("intro");
-  if(intro){
-    intro.style.display="none";
-  }
-},3000);
+/* REMOVE INTRO */
+setTimeout(()=>{document.getElementById("intro").style.display="none";},3000);
 
 /* COUNTDOWN */
 const target=new Date("March 3, 2026 00:00:00").getTime();
 setInterval(()=>{
-  const now=new Date().getTime();
-  const d=target-now;
+  const d=target-new Date().getTime();
   if(d<=0)return;
   days.innerText=Math.floor(d/(1000*60*60*24));
   hours.innerText=Math.floor((d/(1000*60*60))%24);
@@ -309,10 +314,38 @@ setInterval(()=>{
   seconds.innerText=Math.floor((d/1000)%60);
 },1000);
 
-/* TOGGLE TEACHERS */
+/* TEACHERS */
 function toggleBlessings(){
   const g=document.getElementById("blessings");
   g.style.display=g.style.display==="none"?"block":"none";
+}
+
+/* BIRTHDAY LOGIC */
+function generateWish(){
+  const cat=document.getElementById("category").value;
+  const name=document.getElementById("personName").value.trim();
+  const box=document.getElementById("wishBox");
+
+  if(cat==="atbf" && name.toLowerCase()!=="muskan"){
+    box.style.display="block";
+    box.innerHTML="This message is reserved.";
+    return;
+  }
+
+  let msg="";
+  if(cat==="alumni")
+    msg="Warm birthday wishes. Your journey through Prerana reflects resilience and purpose. May the year ahead strengthen your impact.";
+  if(cat==="mentor")
+    msg="Respected birthday greetings. Your guidance continues to shape lives with wisdom and values.";
+  if(cat==="teacher")
+    msg="With deep respect, wishing you a very happy birthday. Your role in shaping generations is invaluable.";
+  if(cat==="friends")
+    msg="Happy Birthday 🎉 May life bring growth, laughter, and meaningful moments.";
+  if(cat==="atbf")
+    msg="Happy Birthday Muskan 🌸 May your days be filled with clarity, calm strength, and smiles that stay.";
+
+  box.style.display="block";
+  box.innerHTML=msg+"<br><br>— Mankit";
 }
 </script>
 
