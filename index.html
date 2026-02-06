@@ -25,18 +25,7 @@ body{
   line-height:1.75;
 }
 
-/* Signature Intro */
-.signature-intro{
-  position:fixed;
-  inset:0;
-  background:linear-gradient(135deg,#0b2a4a,#123c6a);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  z-index:9999;
-}
-.signature-text{
-  font-family:'Pacifico',cursive;
+
   font-size:64px;
   color:#fff;
   white-space:nowrap;
@@ -48,7 +37,63 @@ body{
 @keyframes write{to{width:260px;}}
 
 /* Header */
-header{
+header<script>
+  const text = "Mankit";
+  let index = 0;
+
+  window.addEventListener("load", () => {
+    if (sessionStorage.getItem("splashShown")) {
+      document.getElementById("splash").remove();
+      return;
+    }
+
+    sessionStorage.setItem("splashShown", "true");
+    const typingEl = document.getElementById("typing");
+
+    const typing = setInterval(() => {
+      typingEl.textContent += text[index];
+      index++;
+      if (index === text.length) clearInterval(typing);
+    }, 200);
+
+    setTimeout(() => {
+      const splash = document.getElementById("splash");
+      splash.style.opacity = "0";
+      splash.style.transition = "0.6s";
+      setTimeout(() => splash.remove(), 600);
+    }, 3000);
+  });
+</script>{<style>
+  #splash {
+    position: fixed;
+    inset: 0;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+  }
+
+  #typing {
+    color: #fff;
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+  }
+
+  .cursor {
+    color: #fff;
+    font-size: 3rem;
+    animation: blink 1s infinite;
+  }
+
+  @keyframes blink {
+    0%,50%,100%{opacity:1}
+    25%,75%{opacity:0}
+  }
+</style><div id="splash">
+  <span id="typing"></span><span class="cursor">|</span>
+</div>
   background:linear-gradient(135deg,#0b2a4a,#123c6a);
   color:white;
   padding:32px 20px;
