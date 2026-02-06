@@ -5,31 +5,58 @@
 <title>Mankit | Official Portal</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<!-- GOOGLE FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Pacifico&display=swap" rel="stylesheet">
+
 <style>
+/* ===== BASIC ===== */
 body{
   margin:0;
-  font-family: "Segoe UI", sans-serif;
+  font-family:'Poppins',sans-serif;
   background:#f4f7fb;
-  color:#222;
-}
-header{
-  background:#0b2a4a;
-  color:white;
-  padding:30px 20px;
-  text-align:center;
+  color:#1f1f1f;
 }
 section{
   max-width:900px;
-  margin:30px auto;
+  margin:35px auto;
   background:white;
-  padding:30px;
-  border-radius:16px;
+  padding:35px;
+  border-radius:18px;
   box-shadow:0 12px 30px rgba(0,0,0,.1);
 }
 h2{
   border-left:5px solid #0b2a4a;
   padding-left:12px;
+  color:#0b2a4a;
 }
+
+/* ===== SIGNATURE INTRO ===== */
+#intro{
+  position:fixed;
+  inset:0;
+  background:linear-gradient(180deg,#ff9933,#ffffff,#138808);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+}
+#intro span{
+  font-family:'Pacifico',cursive;
+  font-size:64px;
+  background:rgba(255,255,255,.7);
+  padding:12px 35px;
+  border-radius:14px;
+}
+
+/* ===== HEADER ===== */
+header{
+  background:#0b2a4a;
+  color:white;
+  text-align:center;
+  padding:30px 20px;
+}
+
+/* ===== NOTIFICATION ===== */
 .notice{
   margin-top:15px;
   padding:12px;
@@ -37,7 +64,7 @@ h2{
   color:#7a4b00;
   font-weight:600;
   cursor:pointer;
-  animation:blink 1.5s infinite;
+  animation:blink 1.4s infinite;
 }
 @keyframes blink{
   0%{opacity:1}
@@ -45,23 +72,20 @@ h2{
   100%{opacity:1}
 }
 
-/* Birthday box */
-.birthday-box{
+/* ===== BIRTHDAY BOX ===== */
+#birthdayBox{
   display:none;
   margin-top:25px;
-  padding:25px;
   background:#faf7ff;
+  padding:25px;
   border-radius:14px;
 }
-input,select{
+input,select,button{
   width:100%;
-  padding:10px;
-  margin-top:10px;
+  padding:12px;
+  margin-top:12px;
 }
 button{
-  margin-top:15px;
-  padding:12px;
-  width:100%;
   background:#673ab7;
   color:white;
   border:none;
@@ -69,23 +93,22 @@ button{
   font-size:15px;
   cursor:pointer;
 }
-.warn{
-  margin-top:10px;
+#warn{
   display:none;
   font-weight:600;
+  margin-top:10px;
 }
 
-/* Letter overlay */
-.letter-page{
+/* ===== LETTER PAGE ===== */
+#letterPage{
   display:none;
   position:fixed;
   inset:0;
   background:#fff0f6;
   z-index:9999;
   padding:40px 20px;
-  overflow:auto;
 }
-.heart{
+#heart{
   text-align:center;
   font-size:60px;
   animation:pulse 1.5s infinite;
@@ -95,7 +118,7 @@ button{
   50%{transform:scale(1.2)}
   100%{transform:scale(1)}
 }
-.letter{
+#letter{
   max-width:750px;
   margin:30px auto;
   background:white;
@@ -105,7 +128,7 @@ button{
   line-height:1.7;
   white-space:pre-wrap;
 }
-.close{
+#close{
   position:fixed;
   top:20px;
   right:25px;
@@ -113,6 +136,7 @@ button{
   cursor:pointer;
 }
 
+/* ===== FOOTER ===== */
 footer{
   text-align:center;
   padding:20px;
@@ -123,6 +147,9 @@ footer{
 
 <body>
 
+<!-- SIGNATURE -->
+<div id="intro"><span>Mankit</span></div>
+
 <header>
   <h1>Mankit</h1>
   <p>Official Personal & Professional Portal</p>
@@ -132,8 +159,8 @@ footer{
   <h2>Welcome</h2>
   <p>
     Welcome to my official digital space.  
-    This portal reflects my journey, values, learning,
-    and continuous effort to grow with discipline and purpose.
+    This portal reflects my journey, values, discipline, learning,
+    and continuous effort to grow with responsibility and gratitude.
   </p>
 
   <div class="notice" onclick="openBirthdayBox()">
@@ -141,11 +168,9 @@ footer{
     (Ye test hai: kya Mankit ko aapka birthday yaad hai?)
   </div>
 
-  <div class="birthday-box" id="birthdayBox">
+  <div id="birthdayBox">
     <h3>Get Your Birthday Wish</h3>
-
-    <input type="text" id="name" placeholder="Enter your name">
-
+    <input id="name" placeholder="Enter your name">
     <select id="category">
       <option value="prerana">Prerana Family</option>
       <option value="atbf">ATBF</option>
@@ -154,9 +179,7 @@ footer{
       <option value="relative">Relatives</option>
       <option value="unknown">Unknown Person</option>
     </select>
-
-    <p class="warn" id="warn"></p>
-
+    <p id="warn"></p>
     <button onclick="showWish()">See Your Birthday Wish</button>
   </div>
 </section>
@@ -170,31 +193,28 @@ footer{
   <p>
     I am an alumnus of the Prerana Program (Ministry of Education, Government of India)
     and a member of the Sakura Science Club, Japan.
-    Currently, I am a JEE aspirant who believes deeply in consistency,
-    discipline, and honest effort.
+    I am a JEE aspirant who believes in consistency, discipline, and honesty.
   </p>
   <p>
-    I identify as a feminist, respect all religions equally,
-    and believe that every success in my life belongs to my parents,
-    teachers, the Prerana family, and some very special friends.
-  </p>
-  <p>
-    This portal is dedicated to self-growth
-    and to all those people whose contribution I want to acknowledge throughout my life.
+    I respect all religions, identify as a feminist,
+    and believe every success I have achieved belongs to my parents,
+    teachers, Prerana family, and special friends.
   </p>
 </section>
 
-<div class="letter-page" id="letterPage">
-  <div class="close" onclick="closeLetter()">✕</div>
-  <div class="heart">❤️</div>
-  <div class="letter" id="letter"></div>
+<div id="letterPage">
+  <div id="close" onclick="closeLetter()">✕</div>
+  <div id="heart">❤️</div>
+  <div id="letter"></div>
 </div>
 
 <footer>
-  © 2026 Mankit. All rights reserved.
+© 2026 Mankit. All rights reserved.
 </footer>
-
 <script>
+/* INTRO REMOVE */
+setTimeout(()=>{document.getElementById("intro").style.display="none";},3000);
+
 function openBirthdayBox(){
   document.getElementById("birthdayBox").style.display="block";
 }
@@ -203,43 +223,54 @@ function showWish(){
   const name=document.getElementById("name").value || "Friend";
   const cat=document.getElementById("category").value;
   const warn=document.getElementById("warn");
-  const lowerName=name.trim().toLowerCase();
+  const lname=name.trim().toLowerCase();
 
   if(cat==="atbf"){
     warn.style.display="block";
-    if(lowerName==="muskan"){
+    if(lname==="muskan"){
       warn.style.color="#b30059";
-      warn.innerHTML="🌸 ATBF is reserved. Muskan, this space holds something special for you. 💖";
-    } else {
+      warn.innerHTML="🌸 ATBF is reserved. Muskan, this space holds something special for you.";
+    }else{
       warn.style.color="red";
       warn.innerHTML="ATBF reserved hai, please sahi category choose kare.";
     }
     return;
   }
 
-  warn.style.display="none";
-
   let text="";
   if(cat==="prerana")
-    text=`Happy Birthday ${name} 🌱
-
-Being a part of the Prerana family means discipline, purpose,
-and continuous growth. May this year bring clarity to your goals,
-strength to your efforts, and peace to your journey.
-
-— Mankit`;
+    text=`Happy Birthday ${name} 🌱\n\nBeing part of the Prerana family reflects discipline and purpose. May this year bring clarity, courage, and growth.\n\n— Mankit`;
 
   if(cat==="mentor")
-    text=`Warm birthday wishes ${name} 🌼
-
-Your guidance shapes lives and futures.
-May you be blessed with good health, peace,
-and the joy of meaningful impact.
-
-— Mankit`;
+    text=`Warm birthday wishes ${name} 🌼\n\nYour guidance shapes lives. May you be blessed with health and peace.\n\n— Mankit`;
 
   if(cat==="pmshri")
-    text=`Respected birthday greetings ${name} 🎓
+    text=`Respected birthday greetings ${name} 🎓\n\nMay your journey continue to strengthen education and values.\n\n— Mankit`;
 
-May your journey continue to strengthen education,
-values, and responsible leadership.
+  if(cat==="relative")
+    text=`Happy Birthday ${name} 🎂\n\nWishing you happiness, balance, and good health.\n\n— Mankit`;
+
+  if(cat==="unknown")
+    text=`Happy Birthday 🌟\n\nWishing you strength, growth, and meaningful days ahead.\n\n— Mankit`;
+
+  document.getElementById("letterPage").style.display="block";
+  typeText(text);
+}
+
+function typeText(text){
+  const box=document.getElementById("letter");
+  box.innerHTML="";
+  let i=0;
+  const t=setInterval(()=>{
+    box.innerHTML+=text.charAt(i);
+    i++;
+    if(i>=text.length) clearInterval(t);
+  },30);
+}
+
+function closeLetter(){
+  document.getElementById("letterPage").style.display="none";
+}
+</script>
+</body>
+</html>
