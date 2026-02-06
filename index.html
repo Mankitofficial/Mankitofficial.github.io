@@ -20,19 +20,80 @@ body{
   line-height:1.75;
 }
 
-/* 🇮🇳 TRICOLOUR SIGNATURE INTRO */
-.signature-intro{
+/*<!-- ===== SHINING NIGHT SIGNATURE INTRO ===== -->
+<div id="night-intro">
+  <div id="stars-layer"></div>
+  <div id="mankit-signature"></div>
+</div>
+
+<style>
+/* Night Intro Container */
+#night-intro{
   position:fixed;
   inset:0;
-  background:linear-gradient(
-    180deg,
-    #ff9933 0%,
-    #ffffff 50%,
-    #138808 100%
-  );
+  background:radial-gradient(circle at top,#0b1d3a,#02040f 75%);
   display:flex;
   align-items:center;
   justify-content:center;
+  z-index:99999;
+  overflow:hidden;
+}
+
+/* Stars */
+#stars-layer{
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(2px 2px at 20% 30%, #fff, transparent),
+    radial-gradient(1.5px 1.5px at 70% 40%, #fff, transparent),
+    radial-gradient(2px 2px at 40% 80%, #fff, transparent),
+    radial-gradient(1px 1px at 90% 60%, #fff, transparent),
+    radial-gradient(1.5px 1.5px at 10% 70%, #fff, transparent),
+    radial-gradient(2px 2px at 55% 20%, #fff, transparent);
+  animation: twinkle 2.5s infinite alternate;
+}
+
+@keyframes twinkle{
+  from{opacity:0.4}
+  to{opacity:1}
+}
+
+/* Signature Text */
+#mankit-signature{
+  font-family:'Pacifico',cursive;
+  font-size:76px;
+  color:#ffffff;
+  letter-spacing:2px;
+  text-shadow:
+    0 0 10px rgba(255,255,255,0.6),
+    0 0 25px rgba(120,180,255,0.8),
+    0 0 45px rgba(80,140,255,1);
+  z-index:2;
+  opacity:0;
+}
+</style>
+
+<script>
+/* Typing Signature */
+const signText = "Mankit";
+const signEl = document.getElementById("mankit-signature");
+let index = 0;
+
+function typeSignature(){
+  if(index < signText.length){
+    signEl.style.opacity = 1;
+    signEl.innerHTML += signText.charAt(index);
+    index++;
+    setTimeout(typeSignature, 280);
+  }
+}
+typeSignature();
+
+/* Hide intro after 3 seconds */
+setTimeout(()=>{
+  document.getElementById("night-intro").style.display = "none";
+},3000);
+</script>
   z-index:9999;
 }
 
