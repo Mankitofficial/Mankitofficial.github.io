@@ -10,11 +10,6 @@
 <style>
 :root{
   --blue:#0b2a4a;
-  --sky:#123c6a;
-  --soft:#f4f8ff;
-  --green:#e8f5e9;
-  --red:#fff1f1;
-  --gold:#fff8e1;
 }
 
 body{
@@ -25,27 +20,39 @@ body{
   line-height:1.75;
 }
 
-/* Signature Intro */
+/* 🇮🇳 TRICOLOUR SIGNATURE INTRO */
 .signature-intro{
   position:fixed;
   inset:0;
-  background:linear-gradient(135deg,#0b2a4a,#123c6a);
+  background:linear-gradient(
+    180deg,
+    #ff9933 0%,
+    #ffffff 50%,
+    #138808 100%
+  );
   display:flex;
   align-items:center;
   justify-content:center;
   z-index:9999;
 }
+
 .signature-text{
   font-family:'Pacifico',cursive;
   font-size:64px;
-  color:#fff;
+  color:#0b2a4a;
+  background:rgba(255,255,255,0.6);
+  padding:10px 30px;
+  border-radius:12px;
   white-space:nowrap;
-  overflow:hidden;
-  width:0;
-  border-right:2px solid rgba(255,255,255,.7);
-  animation:write 3s ease forwards;
+  opacity:0;
+  animation:signatureFade 3s ease forwards;
 }
-@keyframes write{to{width:260px;}}
+
+@keyframes signatureFade{
+  0%{opacity:0; transform:scale(0.95);}
+  30%{opacity:1; transform:scale(1);}
+  100%{opacity:1;}
+}
 
 /* Header */
 header{
@@ -80,11 +87,6 @@ h2{
   color:var(--blue);
   border-left:5px solid var(--blue);
   padding-left:14px;
-}
-
-/* Welcome */
-.welcome{
-  background:linear-gradient(135deg,#fdfefe,#eef6ff);
 }
 
 /* Countdown */
@@ -154,7 +156,10 @@ h2{
   background:linear-gradient(135deg,#fff1f1,#ffeaea);
   text-align:center;
 }
-.wishes h2{color:#b71c1c;border-left:none;}
+.wishes h2{
+  color:#b71c1c;
+  border-left:none;
+}
 .wishes a{
   display:inline-block;
   margin-top:20px;
@@ -182,6 +187,7 @@ footer{
 
 <body>
 
+<!-- 🇮🇳 SIGNATURE INTRO -->
 <div class="signature-intro" id="intro">
   <div class="signature-text">Mankit</div>
 </div>
@@ -195,11 +201,11 @@ footer{
   <img src="banner.jpg" alt="Banner">
 </div>
 
-<section class="welcome">
+<section>
   <h2>Welcome</h2>
   <p>
-    This space represents my journey — shaped by discipline, curiosity, and a
-    constant desire to grow. It is not about perfection, but about progress.
+    This space represents my journey — shaped by discipline, curiosity,
+    and a constant effort to grow with integrity.
   </p>
 
   <div class="countdown-small">
@@ -214,8 +220,8 @@ footer{
 <section class="writing-world">
   <h2>Visit My Writing World</h2>
   <p>
-    Here I write about life, learning, mistakes, and real experiences —
-    especially through <strong>Zindagi Ka Real Syllabus</strong>.
+    A space where life, learning, mistakes, and real experiences
+    come together through words.
   </p>
   <a href="https://green-cartoon-b8e.notion.site/Zindagi-Ka-Real-Syllabus-2dd161bfa1c78065b5efcb27eeb530a6?pvs=74" target="_blank">
     Enter My Writing World
@@ -225,8 +231,8 @@ footer{
 <section class="gratitude">
   <h2>Those Who Shaped My Foundation</h2>
   <p>
-    Teachers from PM Shri GSSS Karnal have played a defining role in shaping my
-    thinking, discipline, and values.
+    Teachers from PM Shri GSSS Karnal have played a defining role
+    in shaping my thinking and discipline.
   </p>
   <button onclick="toggleBlessings()">See Blessings from PM Shri GSSS Teachers</button>
   <div class="gallery" id="blessings" style="display:none">
@@ -239,18 +245,15 @@ footer{
 <section class="pm-letter">
   <h2>A Letter That Strengthened My Resolve</h2>
   <p>
-    Receiving words of encouragement from the Hon’ble Prime Minister of India
-    reminded me that responsibility grows with opportunity.
+    Encouragement received from the Hon’ble Prime Minister of India
+    reminded me of responsibility and service.
   </p>
   <a href="pm-letter.jpg" target="_blank">View Letter</a>
 </section>
 
 <section class="wishes">
   <h2>Send Your Lovely Wishes to Mankit</h2>
-  <p>
-    If you wish to share encouragement, feedback, or expectations —
-    your words are always welcome.
-  </p>
+  <p>Your words, thoughts, and expectations are always welcome.</p>
   <a href="mailto:mankitmankit7@gmail.com?subject=Lovely%20Wishes%20for%20Mankit">
     Send Your Wishes
   </a>
@@ -260,32 +263,24 @@ footer{
   <h2>About Me</h2>
 
   <p>
-    My name is Mankit, born and raised in Karnal. I completed my schooling from
-    PM Shri Government Senior Secondary School, Karnal — a place that laid the
-    foundation of my discipline and values.
+    My name is Mankit, born and raised in Karnal. I completed my schooling
+    from PM Shri Government Senior Secondary School, Karnal.
   </p>
 
   <p>
-    I am an alumnus of the Prerana Program under the Ministry of Education,
-    Government of India, and a member of the Sakura Science Club, Japan.
-    These experiences shaped my national as well as global perspective.
+    I am an alumnus of the Prerana Program (Ministry of Education, Government of India)
+    and a member of the Sakura Science Club, Japan.
   </p>
 
   <p>
-    I am a JEE aspirant who believes in consistency over shortcuts. I identify
-    as a feminist, respect all religions, and believe growth is meaningful only
-    when it remains inclusive and grounded.
+    I am a JEE aspirant who believes in consistency over shortcuts.
+    I identify as a feminist, respect all religions, and believe growth
+    must remain inclusive and grounded.
   </p>
 
   <p>
-    Whatever progress I have made so far is the result of my parents’ support,
-    guidance from teachers, the Prerana family, and some very special friends —
-    mentors in different forms, irrespective of gender.
-  </p>
-
-  <p>
-    This portal is dedicated to self-improvement and to everyone whose influence
-    I acknowledge with gratitude in my life.
+    Every step forward has been possible because of my parents,
+    teachers, the Prerana family, and mentors who supported me.
   </p>
 </section>
 
@@ -294,6 +289,15 @@ footer{
 </footer>
 
 <script>
+/* REMOVE SIGNATURE AFTER 3 SECONDS */
+setTimeout(()=>{
+  const intro=document.getElementById("intro");
+  if(intro){
+    intro.style.display="none";
+  }
+},3000);
+
+/* COUNTDOWN */
 const target=new Date("March 3, 2026 00:00:00").getTime();
 setInterval(()=>{
   const now=new Date().getTime();
@@ -305,6 +309,7 @@ setInterval(()=>{
   seconds.innerText=Math.floor((d/1000)%60);
 },1000);
 
+/* TOGGLE TEACHERS */
 function toggleBlessings(){
   const g=document.getElementById("blessings");
   g.style.display=g.style.display==="none"?"block":"none";
